@@ -232,6 +232,7 @@
     cards.forEach(card=>{
       card.classList.remove("chosen");
       $(".choose",card).textContent="I like this plan";
+      $(".choose",card).setAttribute("aria-pressed","false");
     });
     $$(".budget-card").forEach(card=>{
       card.classList.remove("chosen");
@@ -241,6 +242,7 @@
     });
     customCard.classList.add("chosen");
     $(".choose",customCard).textContent="Selected!";
+    $(".choose",customCard).setAttribute("aria-pressed","true");
     $("#picked-name").textContent="Your own suggestion";
     timeChoice.value="flexible";
     picked.classList.remove("hidden");
@@ -254,6 +256,7 @@
   const clearCustomSelection=()=>{
     customCard.classList.remove("chosen");
     $(".choose",customCard).textContent="Suggest a place";
+    $(".choose",customCard).setAttribute("aria-pressed","false");
     customWrap.classList.add("hidden");
     updateMap();
   };
