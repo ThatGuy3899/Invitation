@@ -28,16 +28,6 @@
       meet:"Near the sheltered connection from Merdeka MRT or Plaza Rakyat LRT — whichever is easier for you. We'll confirm the exact meeting point in chat.",
       rain:"We can stay inside 118 Mall and choose from shops and cafés that are open, skipping outdoor photos. Some shops are still opening."
     },
-    "Art Gallery Afternoon":{
-      where:"National Art Gallery, Jalan Temerloh, Kuala Lumpur",transit:"Hospital Kuala Lumpur MRT (Putrajaya Line), Gate B · walk to the gallery",details:"Free indoor gallery visit; optional café afterwards",search:"National Art Gallery Jalan Temerloh Kuala Lumpur",
-      meet:"At the National Art Gallery main entrance after taking the MRT; we can confirm a simple landmark in chat.",
-      rain:"The galleries are indoors, so we can explore the exhibitions and skip any outdoor walk afterwards."
-    },
-    "Chinatown Photo Walk":{
-      where:"Kwai Chai Hong, Lorong Panggung, Kuala Lumpur",transit:"Pasar Seni MRT / LRT · short walk to Kwai Chai Hong",details:"Free murals and photos; optional Central Market",search:"Kwai Chai Hong Lorong Panggung Kuala Lumpur",
-      meet:"At Pasar Seni station near the MRT Exit A direction, then we can walk together towards Kwai Chai Hong.",
-      rain:"Kwai Chai Hong is an outdoor alley. If it rains or gets too hot, we can head indoors at Central Market."
-    }
   };
   const openEndedTips = {
     meet:"We can choose an easy-to-find public meeting point once we agree on a place.",
@@ -229,12 +219,6 @@
       $(".choose",card).textContent="I like this plan";
       $(".choose",card).setAttribute("aria-pressed","false");
     });
-    $$(".budget-card").forEach(card=>{
-      card.classList.remove("chosen");
-      const button=$(".budget-choose",card);
-      button.textContent="Pick this adventure";
-      button.setAttribute("aria-pressed","false");
-    });
     customCard.classList.add("chosen");
     $(".choose",customCard).textContent="Selected!";
     $(".choose",customCard).setAttribute("aria-pressed","true");
@@ -256,7 +240,6 @@
     updateMap();
   };
   cards.forEach(card=>$(".choose",card).addEventListener("click",clearCustomSelection));
-  $$(".budget-card").forEach(card=>$(".budget-choose",card).addEventListener("click",clearCustomSelection));
   customInput.addEventListener("input",()=>{
     SCHEDULES[suggestedName].location=safeText(customInput.value);
     updateMap();updateCalendarTools();
