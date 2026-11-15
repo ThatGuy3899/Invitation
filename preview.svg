@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff2ef"/><stop offset=".58" stop-color="#fff9f4"/><stop offset="1" stop-color="#f8dce8"/></linearGradient><filter id="shadow"><feDropShadow dx="0" dy="13" stdDeviation="22" flood-color="#a96e8555"/></filter></defs>
+<rect width="1200" height="630" fill="url(#bg)"/>
+<circle cx="1087" cy="45" r="140" fill="#f5c7d5" opacity=".55"/><circle cx="85" cy="600" r="170" fill="#f3d4c4" opacity=".65"/>
+<rect x="90" y="80" width="1020" height="470" rx="52" fill="#ffffff" filter="url(#shadow)"/>
+<text x="600" y="168" text-anchor="middle" font-family="Arial,sans-serif" font-size="26" letter-spacing="7" font-weight="700" fill="#b66a7c">A LITTLE SOMETHING FOR YOU</text>
+<text x="600" y="270" text-anchor="middle" font-family="Georgia,serif" font-size="72" fill="#463b3b">Would you like to</text>
+<text x="600" y="369" text-anchor="middle" font-family="Georgia,serif" font-size="94" font-style="italic" fill="#c87088">go on a date?</text>
+<text x="600" y="447" text-anchor="middle" font-family="Arial,sans-serif" font-size="30" fill="#896a76">Coffee · a little adventure · your choice</text>
+<g fill="#e594a6"><path d="M168 155c-30-30-73 15 0 62 73-47 30-92 0-62Z"/><path d="M1028 412c-25-25-62 13 0 52 62-39 25-77 0-52Z"/></g>
+<text x="1070" y="180" font-family="Georgia,serif" font-size="55" fill="#dfa5b5">✦</text><text x="160" y="470" font-family="Georgia,serif" font-size="45" fill="#dfa5b5">✧</text>
+</svg>

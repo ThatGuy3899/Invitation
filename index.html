@@ -1,0 +1,940 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#fff9f4" />
+  <meta name="description" content="A little invitation, just for you. Choose a coffee date adventure in KL" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="A little invitation for you" />
+  <meta property="og:description" content="Coffee, a tiny adventure, and a question for you 📩" />
+  <meta property="og:url" content="https://thatguy3899.github.io/Date_Invitation/" />
+  <meta property="og:image" content="https://thatguy3899.github.io/Date_Invitation/preview.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="A little invitation for you" />
+  <meta name="twitter:description" content="An afternoon adventure in KL, perhaps?" />
+  <meta name="twitter:image" content="https://thatguy3899.github.io/Date_Invitation/preview.png" />
+  <title>A little question for you</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#39312f; --muted:#7e706d; --cream:#fff9f4; --pink:#eb8d96; --pink-dark:#bf6571; --line:#ecdcd4; --white:#fff; --shadow:0 22px 70px rgba(104,67,64,.11); }
+    * {box-sizing:border-box}
+    html {scroll-behavior:smooth}
+    body {margin:0; min-height:100vh; font-family:'DM Sans',system-ui,sans-serif; color:var(--ink); background:radial-gradient(ellipse at 5% 0%,#ffe7e9 0,transparent 37%),radial-gradient(ellipse at 95% 88%,#fff0d9 0,transparent 40%),var(--cream);}
+    button,a {font:inherit}
+    button {cursor:pointer}
+    button:focus-visible,a:focus-visible {outline:3px solid #9f6164;outline-offset:4px}
+    .shell {width:min(100% - 36px,980px);margin:auto}
+    header {display:flex;align-items:center;justify-content:space-between;padding:29px 0;color:#9b7776;font-size:12px;letter-spacing:.15em;text-transform:uppercase;font-weight:700}
+    header .brand {font-family:'DM Serif Display',Georgia,serif;font-size:26px;letter-spacing:0;text-transform:none;color:var(--pink-dark);font-weight:400}
+    main {padding:13px 0 44px}
+    .invitation {position:relative;isolation:isolate;text-align:center;overflow:hidden;background:rgba(255,255,255,.85);padding:65px 34px 58px;border:1px solid #fff;box-shadow:var(--shadow);border-radius:30px;max-width:780px;margin:14px auto 0}
+    .invitation:before, .invitation:after {content:"";position:absolute;z-index:-1;border-radius:50%;}
+    .invitation:before {background:#fff0eb;width:230px;height:230px;left:-105px;bottom:-127px}
+    .invitation:after {background:#fce7eb;width:190px;height:190px;right:-85px;top:-110px}
+    .top-illustration {font-size:50px;line-height:1.3;transform:rotate(-8deg);display:inline-block;margin-bottom:14px;filter:drop-shadow(0 7px 7px #d5b0ae66)}
+    .eyebrow {font-size:11px;letter-spacing:.22em;color:var(--pink-dark);font-weight:700;text-transform:uppercase}
+    h1,h2,h3,p {margin-top:0}
+    h1,h2,.message {font-family:'DM Serif Display',Georgia,serif;font-weight:400}
+    h1 {font-size:clamp(40px,7vw,72px);line-height:1.08;letter-spacing:-.022em;margin:15px auto 18px;max-width:660px}
+    .rose {color:var(--pink-dark);font-style:italic}
+    .lede {line-height:1.9;color:var(--muted);font-size:15px;max-width:490px;margin:0 auto 24px}
+    .pills {display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-bottom:31px}
+    .pill {border:1px solid #eedad7;background:#fff8f6;border-radius:99px;padding:9px 13px;font-size:12px;color:#8a6b69}
+    .actions {display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+    .btn {border:1px solid transparent;padding:15px 25px;border-radius:14px;font-weight:700;min-width:151px;transition:transform .15s,background-color .15s,box-shadow .15s;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:7px}
+    .btn:hover {transform:translateY(-2px)}
+    .primary {background:var(--pink);color:#fff;box-shadow:0 7px 20px #eb8d9640}
+    .primary:hover {background:var(--pink-dark)}
+    .secondary {background:#fff;color:#7d6462;border-color:#e8d8d1}
+    .secondary:hover {background:#fff8f6}
+    .quiet {background:none;border:0;color:#a37b79;text-decoration:underline;text-underline-offset:4px;cursor:pointer;padding:10px 5px;font-size:13px}
+    .under {margin:27px 0 0;color:#a7918d;font-size:12px}
+    .hidden {display:none !important}
+    .in {animation:appear .45s ease both}
+    @keyframes appear {from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+    .plans {max-width:950px;margin:18px auto 0}
+    .sectionhead {text-align:center;margin-bottom:28px}
+    .sectionhead h2 {font-size:clamp(36px,5vw,52px);line-height:1.1;margin:10px 0 9px}
+    .sectionhead p {color:var(--muted);font-size:14px;line-height:1.8}
+    .plan-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .plan-card {border:1px solid #f0e3dd;background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 12px 30px rgba(122,70,74,.06);display:flex;flex-direction:column;transition:border-color .15s,transform .15s,box-shadow .15s}
+    .plan-card:hover {transform:translateY(-3px);box-shadow:0 19px 38px rgba(122,70,74,.11)}
+    .plan-card.chosen {border:2px solid var(--pink);box-shadow:0 15px 40px #eb8d9626}
+    .plan-art {position:relative;height:128px;display:flex;align-items:center;justify-content:center;overflow:hidden;font-size:56px}
+    .plan-art:before,.plan-art:after {content:"";position:absolute;width:146px;height:146px;border-radius:50%;background:#ffffff33;top:-72px;right:-46px}
+    .plan-art:after {height:100px;width:100px;top:70px;left:-35px}
+    .art-1 {background:linear-gradient(120deg,#f7d4c9,#fbe3c8)}
+    .art-2 {background:linear-gradient(120deg,#d9e9d9,#e8efd2)}
+    .art-3 {background:linear-gradient(120deg,#d9e7f4,#e8dcf4)}
+    .art-emoji {z-index:1;filter:drop-shadow(0 7px 5px #00000012)}
+    .plan-body {padding:21px 19px 18px;display:flex;flex-direction:column;flex:1}
+    .smallcaps {text-transform:uppercase;letter-spacing:.13em;font-size:10px;font-weight:700;color:#ab7877;margin-bottom:8px}
+    h3 {font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-size:27px;line-height:1.15;margin:0 0 8px}
+    .plan-sub {font-size:12px;color:var(--muted);line-height:1.65;min-height:39px;margin-bottom:15px}
+    .stats {display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;border-block:1px solid #f3e8e4;padding:12px 0;margin-bottom:16px;font-size:11px;color:#7e6d69}
+    .timeline {list-style:none;padding:0;margin:0 0 22px;display:grid;gap:10px}
+    .timeline li {display:grid;grid-template-columns:54px 1fr;gap:6px;align-items:start;font-size:12px;line-height:1.45}
+    .timeline time {font-weight:700;color:#bd777e;font-size:11px}
+    .choose {margin-top:auto;width:100%;font-size:13px;padding:13px 12px;min-width:0}
+    .chosen .choose {background:#fff0f0;color:#b75d6a;border-color:#e7afb6}
+    .chosen .choose:after {content:' ✓'}
+    .picked {max-width:680px;background:#fff;border:1px solid #f0dfda;box-shadow:var(--shadow);border-radius:24px;margin:26px auto 0;text-align:center;padding:28px}
+    .picked h2 {font-size:36px;margin:10px 0}
+    .picked p {font-size:14px;color:var(--muted);line-height:1.7}
+    .picked .actions {margin-top:19px}
+    .footer {text-align:center;font-size:12px;line-height:1.7;color:#b09691;margin:36px 0 20px}
+    #toast {position:fixed;left:50%;bottom:22px;transform:translateX(-50%);padding:12px 20px;border-radius:100px;background:#39312f;color:#fff;font-size:13px;box-shadow:0 10px 30px #0002;z-index:10}
+    @media(max-width:780px){.plan-grid{grid-template-columns:1fr;max-width:480px;margin:auto}.plan-card{display:grid;grid-template-columns:128px 1fr}.plan-art{height:100%;min-height:250px}.plan-body{padding:18px}.plan-sub{min-height:0}.timeline{gap:8px}.choose{margin-top:4px}}
+    @media(max-width:530px){header{padding:19px 0}.invitation{padding:57px 22px 40px;border-radius:23px;margin-top:10px}h1{font-size:45px}.actions{gap:9px}.actions .btn{flex:1;min-width:0}.plan-card{display:block}.plan-art{height:118px;min-height:0}.plan-body{padding:19px}.timeline{gap:9px}.picked{padding:24px 18px}.picked .actions{display:grid;grid-template-columns:1fr}.footer{padding:0 12px}}
+    @media(prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}html{scroll-behavior:auto}}
+
+    /* Playful motion, with gentle reduced-motion fallbacks */
+    :root { --peach:#ffd6c3; --lilac:#e9ddff; }
+    body {overflow-x:hidden; transition:background-color .7s;}
+    .shell{position:relative;z-index:1}
+    header .brand{animation:brandIn .8s cubic-bezier(.2,1.2,.4,1) both}
+    @keyframes brandIn{from{opacity:0;transform:translateY(-14px) rotate(-7deg)}to{opacity:1;transform:translateY(0) rotate(0)}}
+    .ambient{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+    .floatie{position:absolute;user-select:none;opacity:.47;animation:floatAround 9s ease-in-out infinite;filter:drop-shadow(0 5px 9px #bb858326)}
+    .floatie-a{left:5%;top:19%;font-size:42px;color:#eb9d9f;animation-delay:-1.2s}
+    .floatie-b{right:8%;top:18%;font-size:68px;color:#e9a4aa;animation-delay:-4s;animation-duration:11s}
+    .floatie-c{left:12%;bottom:14%;font-size:56px;color:#e5be7d;animation-delay:-6s}
+    .floatie-d{right:12%;bottom:12%;font-size:50px;color:#b2b9e6;animation-delay:-2s;animation-duration:12s}
+    .floatie-e{left:47%;top:2%;font-size:24px;color:#f2a6b0;animation-delay:-7s}
+    .floatie-f{right:3%;top:55%;font-size:31px;color:#edc5a8;animation-delay:-5s}
+    @keyframes floatAround{0%,100%{transform:translate3d(0,0,0) rotate(-10deg)}50%{transform:translate3d(5px,-24px,0) rotate(14deg)}}
+    .invitation{animation:cardEntrance .8s cubic-bezier(.16,1,.3,1) both; backdrop-filter:blur(15px)}
+    @keyframes cardEntrance{from{opacity:0;transform:translateY(38px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+    .invitation:before{animation:breath 7s ease-in-out infinite}
+    .invitation:after{animation:breath 8s ease-in-out infinite reverse}
+    @keyframes breath{50%{transform:scale(1.25) translateY(-10px)}}
+    .top-illustration.mail-sticker{border:0;background:transparent;padding:0 5px 18px;font-size:62px;cursor:pointer;position:relative;transition:filter .2s;animation:envelopeBounce 3.7s ease-in-out infinite; transform-origin:50% 75%}
+    .mail-sticker:hover{filter:drop-shadow(0 9px 14px #d5b0ae99)}
+    .mail-sticker:active{transform:scale(.94)}
+    .tap-hint{position:absolute;bottom:0;right:-45px;background:#fff1f3;border:1px solid #efc9cf;border-radius:20px;padding:4px 8px;color:#b46f80;font-family:'DM Sans',sans-serif;font-size:10px;font-weight:700;white-space:nowrap;transform:rotate(8deg)}
+    @keyframes envelopeBounce{0%,100%{transform:rotate(-10deg) translateY(0)}45%{transform:rotate(5deg) translateY(-9px)}70%{transform:rotate(-6deg) translateY(1px)}}
+    .eyebrow-sparkle{display:inline-block;color:#e5a658;font-size:15px;animation:twinkle 2.2s ease-in-out infinite}
+    .eyebrow-sparkle:last-child{animation-delay:1.1s}
+    @keyframes twinkle{0%,100%{transform:scale(.8) rotate(-12deg);opacity:.55}50%{transform:scale(1.3) rotate(18deg);opacity:1}}
+    h1{animation:textRise .9s .14s ease both}
+    .lede{animation:textRise .9s .26s ease both}
+    .pills{animation:textRise .9s .36s ease both}
+    .invitation .actions{animation:textRise .9s .5s ease both}
+    @keyframes textRise{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+    .rose{background-image:linear-gradient(95deg,#ba6775,#e694a1,#af6674);background-size:200% 100%;background-clip:text;-webkit-background-clip:text;color:transparent;animation:roseGlow 5s ease-in-out infinite}
+    @keyframes roseGlow{50%{background-position:100% 50%}}
+    .pill{transition:transform .25s, background-color .25s;box-shadow:0 2px 6px #c8938b12}
+    .pill:hover{transform:rotate(-4deg) translateY(-4px);background:#fff0ec}
+    .btn{position:relative;isolation:isolate;overflow:hidden;transition:transform .25s cubic-bezier(.2,.9,.3,1.3),box-shadow .25s,background-color .2s}
+    .btn:active{transform:scale(.95)}
+    #yes{background:linear-gradient(125deg,#eb8d96,#e57592,#dc8dba);background-size:220% 100%;animation:shineButton 5s ease-in-out infinite;box-shadow:0 9px 28px #e4789755}
+    #yes:hover{transform:translateY(-4px) rotate(-1deg);box-shadow:0 13px 35px #e4789777}
+    #yes:after{content:'✦';position:absolute;font-size:14px;top:5px;right:12px;color:#fff9;animation:twinkle 2s infinite}
+    @keyframes shineButton{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+    .little-heart{display:inline-block;animation:beat 1.8s ease-in-out infinite}
+    @keyframes beat{0%,100%{transform:scale(1)}45%{transform:scale(1.4)}}
+    body[data-scene="plans"]{background-color:#fff8f5}
+    .happy-face{font-size:35px;margin:13px 0 0;animation:happyWiggle 2.8s ease-in-out infinite}
+    @keyframes happyWiggle{0%,100%{transform:rotate(-7deg) scale(.98)}50%{transform:rotate(8deg) scale(1.09)}}
+    .plans.in .sectionhead{animation:textRise .65s ease both}
+    .plans.in .plan-card{animation:planPop .65s cubic-bezier(.16,1,.3,1) both}
+    .plans.in .plan-card:nth-child(1){animation-delay:.1s}
+    .plans.in .plan-card:nth-child(2){animation-delay:.22s}
+    .plans.in .plan-card:nth-child(3){animation-delay:.34s}
+    @keyframes planPop{from{opacity:0;transform:translateY(35px) scale(.94)}to{opacity:1;transform:translateY(0) scale(1)}}
+    .plan-card{position:relative;transform-style:preserve-3d;transition:border-color .2s,transform .24s,box-shadow .25s}
+    .plan-card:hover{transform:translateY(-8px) rotate(var(--tiltX,0deg)) rotateY(var(--tiltY,0deg));box-shadow:0 25px 45px rgba(122,70,74,.15)}
+    .plans.in .plan-card:nth-child(4){animation-delay:.46s}
+    .plan-card.chosen:before{content:'Your pick!';position:absolute;right:11px;top:11px;z-index:2;color:#a65567;background:#fff;border-radius:99px;box-shadow:0 4px 10px #0001;padding:7px 10px;font-size:11px;font-weight:700;transform:rotate(7deg);animation:stampIn .4s cubic-bezier(.22,1.5,.35,1) both}
+    @keyframes stampIn{from{transform:scale(.4) rotate(-15deg);opacity:0}to{transform:scale(1) rotate(7deg);opacity:1}}
+    .plan-art{height:146px}
+    .plan-art:before{animation:artBlob 6s ease-in-out infinite alternate}
+    .plan-art:after{animation:artBlob 7s ease-in-out infinite alternate-reverse}
+    @keyframes artBlob{to{transform:translate(-13px,12px) scale(1.3)}}
+    .art-emoji{font-size:64px;display:inline-block;animation:emojiDance 4s ease-in-out infinite;transition:transform .25s}
+    .plan-card:hover .art-emoji{animation:emojiDance 1.3s ease-in-out infinite}
+    @keyframes emojiDance{0%,100%{transform:rotate(-5deg) translateY(2px)}50%{transform:rotate(7deg) translateY(-10px)}}
+    .art-1{background:linear-gradient(135deg,#f9d3cb,#ffe5bb,#ffd8e0)}
+    .art-2{background:linear-gradient(135deg,#d7eedc,#d8eef2,#f6eaca)}
+    .art-3{background:linear-gradient(135deg,#dce7ff,#efddff,#f4dce9)}
+    .art-4{background:linear-gradient(135deg,#ffe5bf,#f4d7dd,#dcd6ff)}
+    .timeline li{transition:transform .2s}
+    .plan-card:hover .timeline li:nth-child(odd){transform:translateX(3px)}
+    .choose{font-weight:700}
+    .surprise-wrap{text-align:center;margin:28px 0 12px;display:flex;align-items:center;gap:12px;justify-content:center;flex-wrap:wrap}
+    .surprise-label{font-size:13px;color:#8f7976}
+    .surprise{border:1px dashed #d797a1;background:#fff0f3;color:#ae5c77;border-radius:40px;padding:12px 17px;font-weight:700;box-shadow:0 4px 17px #d797a123;transition:transform .2s,box-shadow .2s;cursor:pointer}
+    .surprise:hover{transform:translateY(-4px) rotate(-3deg);box-shadow:0 9px 18px #d797a141}
+    .surprise:active{transform:scale(.96)}
+    .picked{position:relative;overflow:hidden;animation:cardEntrance .65s cubic-bezier(.16,1,.3,1) both}
+    .picked-icon{font-size:42px;animation:beat 2s ease-in-out infinite}
+    .picked h2{color:#b3627a}
+    .celebrations{position:fixed;inset:0;z-index:50;pointer-events:none;overflow:hidden}
+    .confetti-piece{position:absolute;left:0;top:0;pointer-events:none;opacity:0;animation:confettiFlight var(--dur,1.2s) cubic-bezier(.1,.55,.3,1) forwards;transform:translate3d(var(--x,0),var(--y,0),0) rotate(0deg)}
+    @keyframes confettiFlight{0%{transform:translate3d(var(--x),var(--y),0) rotate(0deg) scale(.55);opacity:0}12%{opacity:1}80%{opacity:1}100%{transform:translate3d(calc(var(--x) + var(--dx)),calc(var(--y) + var(--dy)),0) rotate(var(--spin)) scale(.75);opacity:0}}
+    #toast{max-width:min(90vw,360px);text-align:center;animation:toastPop .3s ease both}
+    @keyframes toastPop{from{opacity:0;transform:translate(-50%,15px) scale(.9)}to{opacity:1;transform:translate(-50%,0) scale(1)}}
+    @media(max-width:780px){.plan-art{height:100%;min-height:260px}.floatie-a{left:-10px}.floatie-b{right:-8px}.floatie-c{left:2%}}
+    @media(max-width:530px){.floatie{opacity:.26}.floatie-a{font-size:31px}.floatie-b{font-size:43px}.floatie-d{font-size:32px}.invitation{backdrop-filter:none}.top-illustration.mail-sticker{font-size:55px}.tap-hint{right:-45px}.plan-art{height:128px;min-height:0}.plan-card:hover{transform:translateY(-4px)}.surprise-wrap{flex-direction:column;gap:8px}.happy-face{font-size:30px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none !important;transition:none !important;scroll-behavior:auto !important}.plan-card:hover{transform:none}.floatie{display:none}}
+
+    /* Calendar, clear delivery states, and a little extra personality. */
+    .send-note{max-width:470px;margin:18px auto;color:#927875;font-size:12px;line-height:1.75}
+    .reply-form{margin:20px auto 0;max-width:430px;display:grid;gap:9px;text-align:left}
+    .reply-form>label:not(.checkline){display:block;font-size:13px;font-weight:700;color:#754f55;margin-top:8px}
+    .reply-form input[type=date],.reply-form textarea{width:100%;min-height:49px;appearance:auto;border:1px solid #e3d0cd;background:#fffaf8;color:#45383a;border-radius:13px;padding:12px 14px;font:inherit;font-size:15px;box-sizing:border-box}
+    .reply-form textarea{resize:vertical;min-height:71px}
+    .reply-form input:focus,.reply-form textarea:focus{outline:3px solid #f2c6d1;outline-offset:1px}
+    .reply-form input:disabled{opacity:.5;background:#f3efec;cursor:not-allowed}
+    .reply-form .checkline{display:flex;gap:9px;align-items:center;font-size:12px;font-weight:500;color:#7b6664;margin-top:3px}
+    .checkline input{accent-color:#cf788a;width:17px;height:17px}
+    .field-hint{font-size:11px!important;text-align:left;color:#95807f!important;margin:0 0 5px;line-height:1.5!important}
+    .optional{font-size:11px;color:#a48c88;font-weight:400}
+    .reply-form .actions{margin-top:10px}
+    .feedback{font-size:13px!important;line-height:1.6!important;min-height:16px;margin:6px 0!important;color:#a64d66!important;text-align:center}
+    .feedback.ok{color:#407c61!important;font-weight:700}
+    .feedback.bad{color:#a84955!important}
+    .btn:disabled{cursor:wait;opacity:.66;transform:none!important}
+    .picked .send-note{margin:15px auto 0}
+    .plans .sectionhead h2{max-width:700px;margin-inline:auto}
+    @media(max-width:530px){.reply-form .actions{display:flex;flex-direction:column}.reply-form .actions .btn{width:100%}.reply-form{gap:8px}.picked{padding:25px 17px}}
+
+    /* v4: readable copy previews and independent calendar saving */
+    .reply-preview{display:block;width:min(100%,450px);margin:14px auto 19px;box-sizing:border-box;border:1px solid #ead5d3;background:#fffaf8;color:#594648;border-radius:14px;padding:15px 17px;min-height:86px;line-height:1.65;font:13px/1.6 'DM Sans',system-ui,sans-serif;resize:vertical;text-align:left}
+    .preview-caption{font-size:12px;line-height:1.55;color:#8b7673;margin:16px auto -3px}
+    .calendar-tools{margin:21px auto 5px;padding:22px 19px;border-radius:18px;border:1px dashed #dca9af;background:linear-gradient(150deg,#fff9f8,#fff2f5);text-align:center;max-width:490px}
+    .calendar-tools h3{font-size:25px;margin:6px 0 8px}
+    .calendar-tools p{font-size:12px!important;line-height:1.7;color:#8a6c6c;margin:0 auto 14px}
+    .calendar-tools .actions{margin:12px auto 0;gap:9px}
+    .calendar-tools .btn{font-size:12px;padding:13px 12px;min-width:160px}
+    .calendar-tools .tiny-print{font-size:11px!important;margin-top:11px!important;color:#98817f}
+    .copy-overlay{position:fixed;inset:0;background:#2d242b88;display:grid;place-items:center;z-index:120;padding:20px}
+    .copy-overlay-card{width:min(100%,530px);background:#fff;border-radius:22px;padding:25px 22px;box-shadow:0 25px 80px #0004;text-align:center}
+    .copy-overlay-card h2{font-size:29px;margin:6px 0 8px}
+    .copy-overlay-card p{font-size:13px;color:#8d7172}
+    .copy-overlay-card textarea{width:100%;box-sizing:border-box;min-height:120px;border:1px solid #e7c6ca;border-radius:12px;padding:12px;font:14px/1.6 'DM Sans',system-ui,sans-serif;color:#594648}
+    @media(max-width:530px){.calendar-tools .actions{flex-direction:column}.calendar-tools .btn{width:100%}.copy-overlay-card{padding:20px 16px}}
+
+    /* v5: small quest tracker, third response path, and time selection */
+    .quest-track{max-width:780px;margin:1px auto 14px;padding:15px 20px;border:1px solid #f1ddd9;background:#fffefbcc;border-radius:20px;box-shadow:0 9px 24px #8957570b}
+    .quest-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+    .quest-step{display:flex;align-items:center;justify-content:center;gap:8px;color:#a89491;font-size:12px;font-weight:700;white-space:nowrap;transition:color .25s,transform .25s}
+    .quest-step .step-num{width:27px;height:27px;border:1px solid #e4d3d1;border-radius:50%;display:grid;place-items:center;background:white;font-size:10px}
+    .quest-step.is-active{color:#b85c76;transform:translateY(-1px)}
+    .quest-step.is-active .step-num{background:#eb8d96;color:white;border-color:#eb8d96;box-shadow:0 3px 9px #eb8d9655}
+    .quest-step.is-done{color:#7c9785}
+    .quest-step.is-done .step-num{background:#e5f3e8;border-color:#b8ddc6}
+    .quest-hint{margin:9px 0 0!important;text-align:center;color:#a0807e;font-size:11px!important;line-height:1.5}
+    .invite-actions{max-width:635px;margin:auto}
+    .invite-actions .btn{min-width:160px;flex:1}
+    .maybe-note-wrap{width:min(100%,450px);margin:16px auto 21px;text-align:left}
+    .maybe-note-wrap label{display:block;margin-bottom:8px;font-size:13px;font-weight:700;color:#754f55}
+    .maybe-note-wrap textarea{width:100%;box-sizing:border-box;min-height:88px;border:1px solid #e4cfcc;border-radius:14px;padding:13px 14px;background:#fffaf8;color:#4b393b;font:14px/1.5 'DM Sans',sans-serif;resize:vertical}
+    .reply-form select{width:100%;min-height:49px;border:1px solid #e3d0cd;background:#fffaf8;color:#45383a;border-radius:13px;padding:12px 14px;font:inherit;font-size:15px}
+    .reply-form select:focus,.maybe-note-wrap textarea:focus{outline:3px solid #f2c6d1;outline-offset:1px}
+    @media(max-width:530px){.quest-track{padding:12px 9px}.quest-step{font-size:10px;gap:4px}.quest-step .step-num{width:24px;height:24px;font-size:9px}.invite-actions{flex-direction:column}.invite-actions .btn{width:100%}}
+
+    /* v5 extras: peekable itineraries and a hidden heart */
+    .itinerary{margin:-4px 0 18px;border-radius:13px;background:#fff9f7;border:1px solid #f0dfdb;overflow:hidden}
+    .itinerary summary{display:flex;justify-content:space-between;align-items:center;gap:8px;list-style:none;cursor:pointer;color:#ad6271;font-size:12px;font-weight:700;padding:12px 14px;user-select:none}
+    .itinerary summary::-webkit-details-marker{display:none}
+    .itinerary summary span{font-size:18px;transition:transform .2s}
+    .itinerary[open] summary span{transform:rotate(180deg)}
+    .itinerary .timeline{margin:2px 12px 12px;padding:5px 4px 8px}
+    .itinerary .map-link{display:block;background:#f8eded;text-align:center;color:#a15f74;text-decoration:none;padding:11px 12px;font-size:11px;font-weight:700}
+    .itinerary .map-link:hover{text-decoration:underline}
+    .secret-heart{font:inherit;border:0;background:transparent;color:#bc8292;padding:0 3px;cursor:pointer;transition:transform .2s}
+    .secret-heart:hover{transform:scale(1.35) rotate(-10deg)}
+    .timeline .stage-num{width:24px;height:24px;display:inline-grid;place-items:center;border-radius:50%;background:#fff0f3;color:#b56579;font-weight:700;font-size:11px}
+    .timeline li{grid-template-columns:30px minmax(0,1fr);align-items:center}
+    @media(min-width:781px){.plan-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:790px;margin:auto}}
+
+/* Cute, optional arcade game; touch, keyboard and reduced motion support */
+.quest-steps{grid-template-columns:repeat(4,minmax(0,1fr))}
+.arcade-shell{max-width:780px;box-sizing:border-box;margin:14px auto 0;padding:29px 24px;text-align:center;background:#fffdfbf2;border:1px solid #f2d9e0;border-radius:27px;box-shadow:var(--shadow)}
+.arcade-shell h2{font-size:clamp(32px,5vw,47px);margin:10px 0}
+.arcade-subtitle{color:var(--muted);max-width:530px;margin:0 auto 20px;font-size:14px;line-height:1.75}
+.arcade-console{max-width:475px;margin:auto}
+.arcade-info{display:flex;justify-content:space-between;gap:8px;margin:0 5px 9px;font-size:12px;font-weight:700;color:#96687b}
+.claw-stage{--claw-x:50%;--claw-depth:10%;height:265px;position:relative;overflow:hidden;border:8px solid #f5c0d4;border-bottom:15px solid #d897b2;border-radius:22px;background:radial-gradient(circle at 27% 17%,#fffbee,#fff1f5 50%,#f4dce8);box-shadow:inset 0 0 0 2px #fff8,0 12px 24px #875a801c;outline-offset:4px}
+.claw-stage:before{content:'✦       ✧       ✦       ✧';position:absolute;top:30%;left:0;right:0;font-size:24px;color:#e5bfd0;opacity:.7;pointer-events:none}
+.claw-stage:after{content:'';position:absolute;z-index:4;bottom:0;left:0;right:0;height:34px;background:linear-gradient(#f4b9d0,#e19ab8)}
+.claw-rail{position:absolute;top:0;left:0;right:0;height:9px;background:repeating-linear-gradient(90deg,#fff0f8 0 19px,#e5a3bb 19px 35px);z-index:6}
+.claw-rope{position:absolute;top:0;left:var(--claw-x);height:var(--claw-depth);width:4px;transform:translateX(-50%);background:linear-gradient(90deg,#917a95,#f8e2ec,#917a95);transition:left .2s,height .7s}
+.claw-arm{position:absolute;z-index:8;left:var(--claw-x);top:var(--claw-depth);width:64px;height:60px;transform:translate(-50%,-2px);transition:left .2s,top .7s}
+.claw-cap{display:block;margin:auto;width:30px;height:17px;background:#aa92ae;border:2px solid #86708d;border-radius:8px 8px 12px 12px}
+.claw-prongs{position:absolute;left:9px;top:15px;width:46px;display:flex;justify-content:space-between}
+.claw-prong{height:30px;width:17px;border:4px solid #988497;border-top:0;border-radius:0 0 13px 13px}
+.claw-prong.left{border-right:0;transform:rotate(-19deg)}
+.claw-prong.right{border-left:0;transform:rotate(19deg)}
+.claw-held{position:absolute;top:32px;left:50%;transform:translateX(-50%);font-size:30px}
+.claw-toy{position:absolute;z-index:2;left:var(--toy-x);bottom:29px;font-size:43px;line-height:1.1;transform:translateX(-50%);filter:drop-shadow(0 4px 3px #92758d40);transition:opacity .2s,transform .2s;user-select:none}
+.claw-toy.caught{opacity:0;transform:translate(-50%,-20px) scale(.5)}
+.arcade-controls{display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:9px;margin-top:15px}
+.arcade-controls .btn{min-width:0;min-height:53px;width:100%;padding:11px 5px;touch-action:manipulation;font-size:13px}
+.arcade-status{font-size:13px;line-height:1.6;color:#936978;min-height:45px;display:grid;place-items:center}
+.arcade-prize{background:#fff3eb;border:1px dashed #d5a1b2;border-radius:17px;padding:14px;margin:5px auto 14px;color:#916173;font-weight:700;line-height:1.5}
+.arcade-prize strong{font-size:37px;display:block;animation:emojiDance 2s ease-in-out infinite}
+.arcade-next{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:10px auto}
+.arcade-next .btn{min-width:175px}
+.arcade-hint{font-size:11px;color:#9c868a;line-height:1.6;margin:15px 0}
+@media(max-width:530px){.quest-step{white-space:normal;flex-direction:column;text-align:center;line-height:1.2}.quest-steps{gap:3px}.arcade-shell{padding:23px 13px}.claw-stage{height:230px;border-width:6px;border-bottom-width:14px}.claw-toy{font-size:35px}.arcade-controls .btn{font-size:12px;padding:10px 3px}.arcade-next .btn{width:100%}}
+@media(prefers-reduced-motion:reduce){.claw-rope,.claw-arm,.claw-toy{transition:none!important}.arcade-prize strong{animation:none!important}}
+  </style>
+  <link rel="stylesheet" href="enhancements.css" />
+</head>
+<body data-scene="invite">
+<a class="skip-to-invitation" href="#main-content">Skip to invitation</a>
+<div class="ambient" aria-hidden="true">
+  <span class="floatie floatie-a">✳</span><span class="floatie floatie-b">✦</span>
+  <span class="floatie floatie-c">✿</span><span class="floatie floatie-d">✦</span>
+  <span class="floatie floatie-e">✧</span><span class="floatie floatie-f">✳</span>
+</div>
+<div id="celebrations" class="celebrations" aria-hidden="true"></div>
+<div class="shell">
+  <header><span class="brand">a little something</span><span>Made just for you <button type="button" id="easter-egg" class="secret-heart" aria-label="Find a secret note" title="Psst... a tiny secret">♡</button></span></header>
+  <nav class="quest-track" aria-label="Little date quest progress">
+    <div class="quest-steps">
+      <div class="quest-step is-active" data-step="1"><span class="step-num">01</span><span>Say hello</span></div>
+      <div class="quest-step" data-step="2"><span class="step-num">02</span><span>Mini game</span></div>
+      <div class="quest-step" data-step="3"><span class="step-num">03</span><span>Choose a plan</span></div>
+      <div class="quest-step" data-step="4"><span class="step-num">04</span><span>Pick a date</span></div>
+    </div>
+    <p class="quest-hint" id="quest-hint" aria-live="polite">Quest 1/4 · A tiny question, absolutely no pressure.</p>
+  </nav>
+  <main id="main-content">
+    <section class="invitation in" id="invite" aria-label="Date invitation">
+      <button class="top-illustration mail-sticker" id="mail-sticker" type="button" aria-label="Tap the envelope for a surprise" title="Psst... tap me!">📩<span class="tap-hint">tap me!</span></button>
+      <div class="eyebrow"><span class="eyebrow-sparkle">✧</span> SIDE QUEST UNLOCKED · A tiny question <span class="eyebrow-sparkle">✧</span></div>
+      <p class="recipient-greeting">Hey Raelyne,</p>
+      <h1>Would you like to go on a <span class="rose">date</span> with me?</h1>
+      <p class="lede">Coffee, good food and a little exploring around KL? I made a tiny website because apparently just asking normally was too easy 🫠</p>
+      <p class="personal-note">I thought it would be nice to spend some time together and get to know you better in person. No pressure though — I just wanted to ask properly :)</p>
+      <div class="pills"><span class="pill">☕ Coffee</span><span class="pill">🌤️ An afternoon together</span><span class="pill">📍 Kuala Lumpur</span></div>
+      <div class="actions invite-actions"><button class="btn primary" id="yes" type="button">Yes, I'd love to</button><button class="btn secondary" id="maybe-button" type="button">Maybe, let's chat 🙂</button><button class="btn secondary" id="no" type="button">No, thank you</button></div>
+      <p class="under">Whatever you choose is totally okay :) </p>
+    </section>
+    <section class="invitation hidden in" id="decline" aria-label="Thanks for answering">
+      <div class="top-illustration" aria-hidden="true">🌷</div><div class="eyebrow">Quest declined · All good!</div>
+      <h1>Thank you for <span class="rose">being honest.</span></h1>
+      <p class="lede">Absolutely no worries. It was worth asking</p>
+      <p class="send-note">You can send your answer here or copy it and send it to me in chat.</p>
+      <p class="preview-caption">This is the exact message the “Copy reply” button copies:</p>
+      <textarea id="no-reply-preview" class="reply-preview" readonly aria-label="No thanks reply to copy">Hey, thanks for asking! I don't think a date is for me, but I appreciate the invitation :)</textarea>
+      <div class="actions"><button class="btn primary" id="send-no" type="button">Send my answer 📩</button><button class="btn secondary" id="copy-no" type="button">Copy this reply</button></div>
+      <p class="feedback" id="no-status" role="status" aria-live="polite"></p>
+      <button class="quiet" id="go-back" type="button">← Back to the question</button>
+    </section>
+    <section class="invitation hidden in" id="maybe" aria-label="Let's talk about it">
+      <div class="top-illustration" aria-hidden="true">🙂</div>
+      <div class="eyebrow">Quest paused · No deadline, promise</div>
+      <h1>We can <span class="rose">figure it out</span> together.</h1>
+      <p class="lede">A maybe is a perfectly good answer. We can just chat and see what works for us. No calendar homework required.</p>
+      <div class="maybe-note-wrap"><label for="maybe-note">Want to leave a note? <span class="optional">(optional)</span></label><textarea id="maybe-note" maxlength="250" placeholder="Maybe another time? / Let's chat a bit more first 😊"></textarea></div>
+      <p class="send-note">You can send this answer here or copy it and send it to me in chat.</p>
+      <div class="actions"><button class="btn primary" id="send-maybe" type="button">Send my answer 📩</button><button class="btn secondary" id="copy-maybe" type="button">Copy reply</button></div>
+      <p class="feedback" id="maybe-status" role="status" aria-live="polite"></p>
+      <button class="quiet" id="maybe-back" type="button">← Back to the question</button>
+    </section>
+
+    <section class="arcade-shell hidden in" id="arcade" aria-label="Optional mini claw machine">
+      <div class="eyebrow">Bonus quest unlocked · 100% optional 🎮</div>
+      <h2 id="arcade-title" tabindex="-1">Tiny <span class="rose">claw machine</span> 🧸</h2>
+      <p class="arcade-subtitle">Three tries to win a virtual plushie. The prize is imaginary, but the questionable engineering is real. You can skip whenever you like.</p>
+      <div class="arcade-console">
+        <div class="arcade-info"><span>🕹️ Plushie Arcade</span><span id="claw-tries">3 tries left</span></div>
+        <div class="claw-stage" id="claw-stage" role="group" tabindex="0" aria-label="Claw machine. Use arrow keys left and right, space to drop. Or use the buttons below.">
+          <div class="claw-rail" aria-hidden="true"></div>
+          <div class="claw-rope" aria-hidden="true"></div>
+          <div class="claw-arm" aria-hidden="true"><span class="claw-cap"></span><div class="claw-prongs"><span class="claw-prong left"></span><span class="claw-prong right"></span></div><span class="claw-held" id="claw-held"></span></div>
+          <span class="claw-toy" style="--toy-x:16%" data-x="16" aria-hidden="true">🐼</span>
+          <span class="claw-toy" style="--toy-x:38%" data-x="38" aria-hidden="true">🐱</span>
+          <span class="claw-toy" style="--toy-x:62%" data-x="62" aria-hidden="true">🧸</span>
+          <span class="claw-toy" style="--toy-x:84%" data-x="84" aria-hidden="true">🐰</span>
+        </div>
+        <div class="arcade-controls">
+          <button type="button" class="btn secondary" id="claw-left" aria-label="Move claw left">◀ Left</button>
+          <button type="button" class="btn secondary" id="claw-right" aria-label="Move claw right">Right ▶</button>
+          <button type="button" class="btn primary" id="claw-drop">Drop! 🕹️</button>
+        </div>
+        <p id="claw-status" class="arcade-status" aria-live="polite">Move the claw above a plushie, then press Drop!</p>
+        <div id="claw-prize" class="arcade-prize hidden" aria-live="polite"><strong id="claw-prize-emoji"></strong><span id="claw-prize-message"></span></div>
+        <div class="arcade-next">
+          <button type="button" class="btn secondary hidden" id="claw-restart">Play again ↻</button>
+          <button type="button" class="btn primary" id="claw-next">Continue to date plans</button>
+        </div>
+        <p class="arcade-hint">No win required. Skip anytime. Keyboard: ← → to move and Space to drop.</p>
+      </div>
+      <button class="quiet" type="button" id="claw-back">← Back to the question</button>
+    </section>
+    <section class="plans hidden in" id="plans" aria-label="Choose a date plan">
+      <div class="sectionhead"><div class="eyebrow">Quest accepted! +100 courage</div><div class="happy-face" aria-hidden="true">😊✨</div><h2>Choose your <span class="rose">side quest</span></h2><p>I prepared four possible adventures. Choose whichever sounds fun. <br>You pick the day; we can figure out the meeting time together!</p></div>
+      <div class="plan-grid">
+        <article class="plan-card" data-plan="REXKL & Central Market">
+          <div class="plan-art art-1"><span class="art-emoji" aria-hidden="true">📚☕</span></div>
+          <div class="plan-body"><div class="smallcaps">Plan 01 · Artsy & easygoing</div><h3>REXKL & Central Market</h3><p class="plan-sub">Food, crafts and interesting little shops at Central Market, with a short REXKL visit if we're up for it.</p><div class="stats"><span>🗓️ Flexible timing</span><span>✨ Little adventures</span></div>
+          <details class="itinerary"><summary>See our afternoon itinerary <span aria-hidden="true">⌄</span></summary><ul class="timeline"><li><span class="stage-num">1</span><span>Start with food or coffee at Central Market</span></li><li><span class="stage-num">2</span><span>Explore the indoor arts and craft shops</span></li><li><span class="stage-num">3</span><span>Try a craft activity if something catches our eye</span></li><li><span class="stage-num">4</span><span>Optional short walk to REXKL if the weather feels okay</span></li><li><span class="stage-num">5</span><span>Browse BookXcess or find a snack if we feel like it</span></li><li><span class="stage-num">6</span><span>Dessert or head home whenever we’re ready</span></li></ul><a class="map-link" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;origin=Central%20Market%2C%20Kuala%20Lumpur&amp;destination=REXKL%2C%20Jalan%20Sultan%2C%20Kuala%20Lumpur&amp;travelmode=walking">📍 Optional walking route to REXKL ↗</a></details>
+          <button class="btn secondary choose" type="button" aria-label="Choose REXKL and Central Market">I like this plan</button></div>
+        </article>
+        <article class="plan-card" data-plan="The Exchange TRX">
+          <div class="plan-art art-2"><span class="art-emoji" aria-hidden="true">🍵🌿</span></div>
+          <div class="plan-body"><div class="smallcaps">Plan 02 · Comfy & modern</div><h3>The Exchange TRX</h3><p class="plan-sub">Good food, coffee or matcha, and easy indoor exploring. Rooftop views only if the weather's nice.</p><div class="stats"><span>🗓️ Flexible timing</span><span>✨ Comfy & cute</span></div>
+          <details class="itinerary"><summary>See our afternoon itinerary <span aria-hidden="true">⌄</span></summary><ul class="timeline"><li><span class="stage-num">1</span><span>Coffee or matcha</span></li><li><span class="stage-num">2</span><span>Explore the mall together</span></li><li><span class="stage-num">3</span><span>Late lunch at TRX</span></li><li><span class="stage-num">4</span><span>Find a cozy spot for dessert or more chatting</span></li><li><span class="stage-num">5</span><span>Optional quick rooftop park visit if it isn’t too hot</span></li></ul><a class="map-link" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=The%20Exchange%20TRX%2C%20Kuala%20Lumpur">📍 Find this place on Google Maps ↗</a></details>
+          <button class="btn secondary choose" type="button" aria-label="Choose The Exchange TRX">I like this plan</button></div>
+        </article>
+        <article class="plan-card" data-plan="LaLaport BBCC">
+          <div class="plan-art art-3"><span class="art-emoji" aria-hidden="true">☕🎶</span></div>
+          <div class="plan-body"><div class="smallcaps">Plan 03 · Food & little discoveries</div><h3>LaLaport BBCC</h3><p class="plan-sub">Good food, cute shops and optional K-pop finds. A relaxed indoor afternoon with time to talk.</p><div class="stats"><span>🗓️ Flexible timing</span><span>✨ Food & fun finds</span></div>
+          <details class="itinerary"><summary>See our flexible afternoon itinerary <span aria-hidden="true">⌄</span></summary><ul class="timeline"><li><span class="stage-num">1</span><span>Start with coffee, matcha or a drink</span></li><li><span class="stage-num">2</span><span>Explore BookXcess and other interesting shops</span></li><li><span class="stage-num">3</span><span>Optional K-pop and collectibles browsing at Pop Play Planet or Notes Wonderland</span></li><li><span class="stage-num">4</span><span>Pick somewhere nice to eat together</span></li><li><span class="stage-num">5</span><span>Grab dessert, or keep chatting if we feel like it</span></li></ul><a class="map-link" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&amp;query=LaLaport%20BBCC%2C%20Kuala%20Lumpur">📍 Find LaLaport BBCC on Google Maps ↗</a></details>
+          <button class="btn secondary choose" type="button" aria-label="Choose LaLaport BBCC">I like this plan</button></div>
+        </article>
+        <article class="plan-card" data-plan="118 Mall & Merdeka 118">
+          <div class="plan-art art-4"><span class="art-emoji" aria-hidden="true">🏙️🧋</span></div>
+          <div class="plan-body"><div class="smallcaps">Plan 04 · New place, new adventure</div><h3>118 Mall & Merdeka 118</h3><p class="plan-sub">Explore a new mall together, discover open shops and find something good to eat. We'll keep it flexible.</p><div class="stats"><span>🗓️ Flexible timing</span><span>✨ Explore together</span></div>
+          <details class="itinerary"><summary>See our flexible date itinerary <span aria-hidden="true">⌄</span></summary>
+            <ul class="timeline">
+              <li><span class="stage-num">1</span><span>Meet for coffee or a drink at a café that's open</span></li>
+              <li><span class="stage-num">2</span><span>Explore the mall and browse whichever shops are open</span></li>
+              <li><span class="stage-num">3</span><span>Look for the Malaysian Artisan District or food hall if open</span></li>
+              <li><span class="stage-num">4</span><span>See The Atmosphere glass dome if that area is accessible</span></li>
+              <li><span class="stage-num">5</span><span>Choose a place that's open for food, then optional dessert</span></li>
+            </ul>
+            <a class="map-link" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&amp;query=118%20Mall%2C%20Jalan%20Hang%20Jebat%2C%20Kuala%20Lumpur">📍 Find 118 Mall on Google Maps ↗</a>
+          </details>
+          <button class="btn secondary choose" type="button" aria-label="Choose 118 Mall and Merdeka 118">I like this plan</button></div>
+        </article>
+      </div>
+      <div class="surprise-wrap"><span class="surprise-label">Can't decide? I got you ✨</span><button class="surprise" type="button" id="surprise"><span aria-hidden="true">🎲</span> Surprise me!</button></div>
+      <section class="picked hidden in" id="picked" aria-live="polite">
+        <div class="picked-icon" aria-hidden="true">✨</div>
+        <div class="eyebrow">Objective updated · almost there!</div>
+        <h2 id="picked-name">Lovely choice!</h2>
+        <p>Pick a day if you'd like. We can decide the meeting time later — especially if you're coming straight from work.</p>
+        <form id="yes-form" class="reply-form">
+          <label for="date-choice">📅 Which day works for you?</label>
+          <input type="date" id="date-choice" name="chosen_date" required aria-describedby="date-hint" />
+          <label class="checkline" for="date-flexible"><input type="checkbox" id="date-flexible" /> Not sure yet — let's decide together</label>
+          <p class="field-hint" id="date-hint">Any day is fine. We can also decide the day together in chat — no pressure.</p>
+          <label for="time-choice">🕑 Meeting time <span class="optional">(optional · Malaysia time)</span></label>
+          <select id="time-choice" name="chosen_time">
+            <option value="flexible" selected>Let's decide the time together</option>
+            <option value="10:00">10:00 AM</option>
+            <option value="10:30">10:30 AM</option>
+            <option value="11:00">11:00 AM</option>
+            <option value="11:30">11:30 AM</option>
+            <option value="12:00">12:00 PM</option>
+            <option value="12:30">12:30 PM</option>
+            <option value="13:00">1:00 PM</option>
+            <option value="13:30">1:30 PM</option>
+            <option value="14:00">2:00 PM</option>
+            <option value="14:30">2:30 PM</option>
+            <option value="15:00">3:00 PM</option>
+            <option value="15:30">3:30 PM</option>
+            <option value="16:00">4:00 PM</option>
+            <option value="16:30">4:30 PM</option>
+            <option value="17:00">5:00 PM</option>
+            <option value="17:30">5:30 PM</option>
+            <option value="18:00">6:00 PM</option>
+          </select>
+          <label for="tiny-note">💬 Anything you want to add? <span class="optional">(optional)</span></label>
+          <textarea id="tiny-note" name="note" rows="2" maxlength="250" placeholder="e.g. Can we go a little later? / I vote for dessert 🍰"></textarea>
+          <p class="feedback" id="yes-status" role="status" aria-live="polite"></p>
+          <div class="actions"><button class="btn primary" type="submit" id="send-yes">Send my pick 📩</button><button class="btn secondary" type="button" id="copy-yes">Copy reply</button></div>
+        </form>
+        <p class="send-note">Pressing “Send my pick” sends your choices to me privately. Or copy the reply and send it to me in chat</p>
+        <div class="calendar-tools hidden in" id="calendar-tools" aria-live="polite">
+          <div class="eyebrow">📅 Calendar side quest unlocked</div>
+          <h3>Save our little adventure?</h3>
+          <p>You can save this date on your own calendar. When you send your pick, I'll receive a link to add it to mine too. Teamwork makes the dream work ✨</p>
+          <div class="actions">
+            <a id="google-calendar-link" class="btn primary" target="_blank" rel="noopener noreferrer" href="#">Add to Google Calendar ↗</a>
+            <button type="button" class="btn secondary" id="download-ics">Apple / Outlook (.ics) 📩</button>
+          </div>
+          <p class="tiny-print">These calendar buttons appear after you choose a specific day and time. Each person saves their own tentative event once we confirm it together.</p>
+        </div>
+      </section>
+      <div style="text-align:center;margin-top:22px"><button class="quiet" id="back-invite" type="button">← Back to invitation</button></div>
+    </section>
+    <aside class="closing-letter" aria-label="A little note from me">
+      <span class="letter-heart" aria-hidden="true">♡</span>
+      <p>Thanks for checking out my little website.<br>I had fun making it, and I hope it made you smile a little :)</p>
+      <span class="letter-signature">— From me to you</span>
+    </aside>
+    <p class="footer">Made with 98% courage, 2% sleep, and way too many CSS animations</p>
+  </main>
+</div>
+<div id="toast" class="hidden" role="status"></div>
+<div id="manual-copy" class="copy-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="manual-copy-heading">
+  <div class="copy-overlay-card">
+    <div class="eyebrow">Clipboard side quest</div>
+    <h2 id="manual-copy-heading">Copy this message ✨</h2>
+    <p>Your browser blocked automatic copying. Select the text below and copy it manually.</p>
+    <textarea id="manual-copy-text" readonly aria-label="Message to copy manually"></textarea>
+    <div class="actions" style="margin-top:16px"><button class="btn primary" id="select-copy-text" type="button">Select all text</button><button class="btn secondary" id="close-manual-copy" type="button">Close</button></div>
+  </div>
+</div>
+<script>
+  // Setup: create a free form at https://formspree.io, then replace REPLACE_ME with your form ID.
+  // This is a public submission endpoint (not a secret). No email address is stored here.
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xeagenyj';
+
+  const invite = document.getElementById('invite');
+  const plans = document.getElementById('plans');
+  const decline = document.getElementById('decline');
+  const maybe = document.getElementById('maybe');
+  const arcade = document.getElementById('arcade');
+  const maybeNote = document.getElementById('maybe-note');
+  const maybeStatus = document.getElementById('maybe-status');
+  const timeChoice = document.getElementById('time-choice');
+  const questHint = document.getElementById('quest-hint');
+  const picked = document.getElementById('picked');
+  const cards = Array.from(document.querySelectorAll('.plan-card'));
+  const dateChoice = document.getElementById('date-choice');
+  const dateFlexible = document.getElementById('date-flexible');
+  const note = document.getElementById('tiny-note');
+  const yesStatus = document.getElementById('yes-status');
+  const noStatus = document.getElementById('no-status');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const celebrationLayer = document.getElementById('celebrations');
+  let selectedPlan = '';
+  let sent = false;
+  let answerRevision = 0; // A deliberate correction sends another Formspree entry; it does not erase the first.
+
+  const updateQuest = () => {
+    const scene = document.body.dataset.scene;
+    const step = scene === 'arcade' ? 2 : scene === 'plans' ? (picked.classList.contains('hidden') ? 3 : 4) : 1;
+    document.querySelectorAll('.quest-step').forEach(el => {
+      const n = Number(el.dataset.step);
+      el.classList.toggle('is-active', n === step && scene !== 'decline' && scene !== 'maybe');
+      el.classList.toggle('is-done', n < step);
+    });
+    questHint.textContent = scene === 'maybe' ? 'Quest on pause · You can always decide together.'
+      : scene === 'decline' ? 'Quest complete · Thanks for being honest.'
+      : step === 1 ? 'Quest 1/4 · A tiny question, absolutely no pressure.'
+      : step === 2 ? 'Quest 2/4 · Bonus arcade. Feel free to skip.'
+      : step === 3 ? 'Quest 3/4 · Choose your preferred adventure.'
+      : 'Quest 4/4 · Pick a day and time that suit you.';
+  };
+  const show = target => {
+    [invite, arcade, plans, decline, maybe].forEach(el => el.classList.toggle('hidden', el !== target));
+    document.body.dataset.scene = target.id;
+    updateQuest();
+    window.scrollTo({top:0,behavior:reduceMotion?'auto':'smooth'});
+  };
+
+  // Set the calendar to today or later using the visitor's own local date.
+  const today = new Date();
+  const dateString = d => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+  dateChoice.min = dateString(today);
+  dateFlexible.addEventListener('change', () => {
+    dateChoice.disabled = dateFlexible.checked;
+    dateChoice.required = !dateFlexible.checked;
+    if (dateFlexible.checked) dateChoice.value = '';
+    updateCalendarTools();
+  });
+
+  const formattedDay = iso => {
+    if (!iso) return "Let's decide together";
+    const [year,month,day] = iso.split('-').map(Number);
+    return new Date(year,month-1,day).toLocaleDateString('en-MY',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+  };
+  // Calendar links are opt-in: neither person's private calendar is modified here.
+  // Times are in Kuala Lumpur / Malaysia (UTC+08:00), even if the visitor is abroad.
+  const SCHEDULES = {
+    'REXKL & Central Market': {durationMinutes:150, location:'Central Market, Jalan Hang Kasturi, Kuala Lumpur, Malaysia'},
+    'The Exchange TRX': {durationMinutes:150, location:'The Exchange TRX, Kuala Lumpur, Malaysia'},
+    'LaLaport BBCC': {durationMinutes:150, location:'LaLaport BBCC, 2 Jalan Hang Tuah, Kuala Lumpur, Malaysia'},
+    '118 Mall & Merdeka 118': {durationMinutes:150, location:'118 Mall, Jalan Hang Jebat, Kuala Lumpur, Malaysia'}
+  };
+  const pad2 = n => String(n).padStart(2,'0');
+  const utcIcs = d => d.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'');
+  const calendarTools = document.getElementById('calendar-tools');
+  const googleCalendarLink = document.getElementById('google-calendar-link');
+  const calendarEvent = () => {
+    if ((selectedPlan === 'Your own suggestion' && !SCHEDULES[selectedPlan]?.location) || !selectedPlan || !SCHEDULES[selectedPlan] || dateFlexible.checked || timeChoice.value === 'flexible' ||
+        !dateChoice.value || dateChoice.value < dateChoice.min) return null;
+    const numbers = dateChoice.value.split('-').map(Number);
+    if (numbers.length !== 3 || numbers.some(n => !Number.isFinite(n))) return null;
+    const [year,month,day] = numbers;
+    const spec = SCHEDULES[selectedPlan];
+    const toUtc = clock => new Date(Date.UTC(year,month-1,day,clock[0]-8,clock[1],0));
+    const timeParts = timeChoice.value.split(':').map(Number);
+    if (timeParts.length !== 2 || timeParts.some(n => !Number.isFinite(n))) return null;
+    const start = toUtc(timeParts);
+    const durationMinutes = spec.durationMinutes;
+    const end = new Date(start.getTime()+durationMinutes*60000);
+    const title = 'Coffee & a little KL date — ' + selectedPlan;
+    const detailsByPlan = {
+      'REXKL & Central Market': 'Start at Central Market for food, crafts and conversation; optional REXKL if the weather feels comfortable.',
+      'The Exchange TRX': 'Coffee or matcha, food and indoor shopping, with an optional rooftop visit if the weather is nice.',
+      'LaLaport BBCC': 'Coffee, food and interesting shops, with optional K-pop and collectibles browsing.',
+      '118 Mall & Merdeka 118': 'Discover open shops, architecture and food at 118 Mall, with flexible plans while more stores open.'
+    };
+    const details = (detailsByPlan[selectedPlan] || 'Coffee, food and a relaxed afternoon exploring together.') + ' Tentative until we confirm together in our chat. (Malaysia time)';
+    const url = new URL('https://calendar.google.com/calendar/r/eventedit');
+    url.search = new URLSearchParams({
+      action:'TEMPLATE', dates:utcIcs(start)+'/'+utcIcs(end),
+      stz:'Asia/Kuala_Lumpur', etz:'Asia/Kuala_Lumpur',
+      text:title, location:spec.location, details:details
+    }).toString();
+    return {start,end,title,details,location:spec.location,url:url.toString(),date:dateChoice.value};
+  };
+  const updateCalendarTools = () => {
+    const event = calendarEvent();
+    calendarTools.classList.toggle('hidden', !event);
+    if (event) googleCalendarLink.href = event.url;
+    else googleCalendarLink.removeAttribute('href');
+  };
+  const escapeIcs = value => value.replace(/\\/g,'\\\\').replace(/\r?\n/g,'\\n').replace(/,/g,'\\,').replace(/;/g,'\\;');
+  function downloadCalendarFile() {
+    const event = calendarEvent();
+    if (!event) return toast('Choose a day and a specific time first 📅');
+    const uid = `afternoon-date-${event.date}-${selectedPlan.replace(/[^a-z0-9]/gi,'-').toLowerCase()}@date-invitation.local`;
+    const lines = [
+      'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//A little date invitation//EN',
+      'CALSCALE:GREGORIAN','METHOD:PUBLISH','BEGIN:VEVENT',
+      'UID:'+uid,'DTSTAMP:'+utcIcs(new Date()),
+      'DTSTART:'+utcIcs(event.start),'DTEND:'+utcIcs(event.end),
+      'SUMMARY:'+escapeIcs(event.title),'LOCATION:'+escapeIcs(event.location),
+      'DESCRIPTION:'+escapeIcs(event.details),'STATUS:TENTATIVE',
+      'END:VEVENT','END:VCALENDAR'
+    ];
+    const blob = new Blob([lines.join('\r\n')+'\r\n'],{type:'text/calendar;charset=utf-8'});
+    const uri = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = uri; a.download = 'our-little-date.ics'; document.body.appendChild(a);a.click();a.remove();
+    window.setTimeout(()=>URL.revokeObjectURL(uri),1500);
+    toast('Calendar file ready! Save it in your calendar 📅');
+  }
+
+  const formattedTime = () => {
+    if (timeChoice.value === 'flexible') return "Let's decide together";
+    const [hours, minutes] = timeChoice.value.split(':').map(Number);
+    return `${hours % 12 || 12}:${pad2(minutes)} ${hours >= 12 ? 'PM' : 'AM'} (MYT)`;
+  };
+  const planReply = () => {
+    const when = dateFlexible.checked ? "We can choose the day together" : formattedDay(dateChoice.value);
+    return `Hey! I'd love to go on a date 😊\nPlan: ${selectedPlan}${selectedPlan === 'Your own suggestion' ? `\nMy location idea: ${document.getElementById('custom-place')?.value.trim() || 'Let us choose together'}` : ''}\nDate: ${when}\nTime: ${formattedTime()}${note.value.trim()?`\nNote: ${note.value.trim()}`:''}`;
+  };
+  const maybeReply = () => "Hey! I'm not quite sure about a date yet, but I'd be happy to chat about it first 😊" + (maybeNote.value.trim() ? `\nNote: ${maybeNote.value.trim()}` : '');
+  const noReply = () => "Hey, thanks for asking! I don't think a date is for me, but I appreciate the invitation :)";
+  const configured = /^https:\/\/formspree\.io\/f\/[a-zA-Z0-9]+$/.test(FORMSPREE_ENDPOINT)
+    && !FORMSPREE_ENDPOINT.endsWith('/REPLACE_ME');
+
+  function setStatus(element, message, type = '') {
+    element.textContent = message;
+    element.className = 'feedback' + (type ? ' ' + type : '');
+  }
+  function reopenResponseForEdit() {
+    // Called only from the explicit Change my answer button on the confirmation.
+    if (!sent) return false;
+    sent = false;
+    answerRevision++;
+    ['send-yes','send-maybe','send-no'].forEach(id => {
+      const button = document.getElementById(id);
+      button.disabled = false;
+      button.textContent = id === 'send-yes' ? 'Send my pick 📩' : 'Send my answer 📩';
+    });
+    [yesStatus,maybeStatus,noStatus].forEach(element => setStatus(element, ''));
+    return true;
+  }
+
+  async function copyReply(value, kind='reply') {
+    let copied = false;
+    if (navigator.clipboard && window.isSecureContext) {
+      try { await navigator.clipboard.writeText(value); copied = true; } catch(e) { /* Try fallback below */ }
+    }
+    if (!copied) {
+      const field = document.createElement('textarea');
+      field.value = value;
+      field.setAttribute('readonly','');
+      field.style.cssText = 'position:fixed;left:8px;top:8px;width:280px;height:80px;opacity:.01;z-index:-1';
+      document.body.appendChild(field);
+      try { field.focus(); field.select(); copied = document.execCommand('copy'); }
+      catch(e) { copied = false; }
+      finally { field.remove(); }
+    }
+    if (copied) {
+      toast(kind==='no' ? 'Your “No thanks” reply was copied 📩' : kind==='maybe' ? 'Your “Maybe” reply was copied 🙂' : 'Your date choice was copied ✨');
+      return;
+    }
+    const modal = document.getElementById('manual-copy');
+    const text = document.getElementById('manual-copy-text');
+    text.value = value;
+    modal.classList.remove('hidden');
+    text.focus(); text.select();
+  }
+
+  async function sendReply(reply, plan, date, extraNote, button, statusElement) {
+    if (sent) {
+      setStatus(statusElement,'You already sent an answer. Use “Change my answer” on your confirmation screen if you want to send an update.','bad');
+      return;
+    }
+    if (!configured) {
+      setStatus(statusElement,'Email notifications are not set up yet. Please use “Copy reply” and send it in our chat 💬','bad');
+      return;
+    }
+    const previousLabel = button.textContent;
+    button.disabled = true;
+    button.textContent = 'Sending... ⏳';
+    setStatus(statusElement, 'Sending your answer...');
+    try {
+      const payload = new FormData();
+      payload.append('response', reply);
+      payload.append('date_plan', plan || 'None');
+      payload.append('suggested_location', reply === 'Yes' && plan === 'Your own suggestion' ? (document.getElementById('custom-place')?.value.trim() || 'To be decided') : 'Not applicable');
+      payload.append('chosen_date', date || 'Not applicable');
+      payload.append('chosen_time_myt', reply === 'Yes' ? formattedTime() : 'Not applicable');
+      payload.append('note', extraNote || '');
+      payload.append('subject', (answerRevision ? 'UPDATED date invitation reply — ' : 'Date invitation reply — ') + reply.toUpperCase());
+      payload.append('reply_update', answerRevision ? 'UPDATED ANSWER — please use this answer instead of earlier submissions' : 'Original answer');
+      payload.append('reply_version', String(answerRevision + 1));
+      payload.append('chosen_date_iso', reply==='Yes' && !dateFlexible.checked ? dateChoice.value : 'Not set');
+      payload.append('time_zone', 'Asia/Kuala_Lumpur (MYT)');
+      const event = reply==='Yes' ? calendarEvent() : null;
+      payload.append('add_to_my_google_calendar', event ? event.url : 'Not applicable');
+      payload.append('message', (answerRevision ? '[UPDATED ANSWER — this replaces my earlier reply]\n' : '') + (reply==='No' ? noReply() : reply==='Maybe' ? maybeReply() : planReply()));
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        body: payload,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (!response.ok) {
+        const err = new Error('Submission failed');
+        err.status = response.status;
+        throw err;
+      }
+      sent = true;
+      setStatus(statusElement, 'Sent successfully! Thank you for replying ✨','ok');
+      button.textContent = 'Sent ✓';
+      button.disabled = true;
+      celebrate(window.innerWidth / 2, window.innerHeight / 2, reply==='Yes'?30:8);
+    } catch (e) {
+      let reason = 'Something went wrong while sending.';
+      if (navigator.onLine === false) reason = 'It looks like you are offline.';
+      else if (e.status === 429) reason = 'Too many attempts in a short time. Please try again later.';
+      else if (e.status === 422 || e.status === 400) reason = 'The form could not accept this response.';
+      else if (e.status === 403 || e.status === 404) reason = 'The reply service is currently unavailable.';
+      else if (e.status >= 500) reason = 'The reply service is having trouble.';
+      setStatus(statusElement, reason + ' Your choices are still here. Try again, or use “Copy reply” to send it in our chat.','bad');
+      button.disabled = false;
+      button.textContent = previousLabel;
+    }
+  }
+
+
+  // The arcade is optional and does not affect Formspree or the calendar.
+  const clawStage=document.getElementById('claw-stage');
+  const clawToys=Array.from(clawStage.querySelectorAll('.claw-toy'));
+  const clawStatus=document.getElementById('claw-status');
+  const clawHeld=document.getElementById('claw-held');
+  const clawPrize=document.getElementById('claw-prize');
+  const clawRestart=document.getElementById('claw-restart');
+  const clawControls=['claw-left','claw-right','claw-drop'].map(id=>document.getElementById(id));
+  const toyNames=['tiny panda','very dramatic cat','fluffy bear','sleepy bunny'];
+  let clawX=50,clawTries=3,clawBusy=false,clawDone=false,clawSession=0;
+  const updateClaw=()=>{
+    clawStage.style.setProperty('--claw-x',clawX+'%');
+    document.getElementById('claw-tries').textContent=clawTries+(clawTries===1?' try left':' tries left');
+    clawControls.forEach(btn=>btn.disabled=clawBusy||clawDone);
+  };
+  const resetClaw=()=>{
+    clawSession++;clawX=50;clawTries=3;clawBusy=false;clawDone=false;
+    clawHeld.textContent='';
+    clawToys.forEach(t=>t.classList.remove('caught'));
+    clawStage.style.setProperty('--claw-depth','10%');
+    clawPrize.classList.add('hidden');clawRestart.classList.add('hidden');
+    clawStatus.textContent='Move the claw above a plushie, then press Drop!';
+    updateClaw();
+  };
+  const moveClaw=step=>{
+    if(clawBusy||clawDone)return;
+    clawX=Math.max(12,Math.min(88,clawX+step*8));updateClaw();
+  };
+  const dropClaw=()=>{
+    if(clawBusy||clawDone||!clawTries)return;
+    clawBusy=true;clawTries--;updateClaw();
+    clawStatus.textContent='Deploying highly questionable technology...';
+    clawStage.style.setProperty('--claw-depth','66%');
+    const session=clawSession;
+    window.setTimeout(()=>{
+      if(session!==clawSession||arcade.classList.contains('hidden'))return;
+      let nearest=null,index=-1,distance=Infinity;
+      clawToys.forEach((toy,i)=>{
+        const d=Math.abs(Number(toy.dataset.x)-clawX);
+        if(!toy.classList.contains('caught')&&d<distance){nearest=toy;index=i;distance=d;}
+      });
+      const win=Boolean(nearest&&distance<=10);
+      if(win){nearest.classList.add('caught');clawHeld.textContent=nearest.textContent.trim();clawStatus.textContent='Wait... it actually worked?!';}
+      else clawStatus.textContent='The claw has chosen chaos. Retrieving...';
+      clawStage.style.setProperty('--claw-depth','10%');
+      window.setTimeout(()=>{
+        if(session!==clawSession||arcade.classList.contains('hidden'))return;
+        clawBusy=false;
+        if(win){
+          clawDone=true;
+          document.getElementById('claw-prize-emoji').textContent=nearest.textContent.trim();
+          document.getElementById('claw-prize-message').textContent='You won a '+toyNames[index]+'! It has zero resale value but excellent emotional support skills.';
+          clawPrize.classList.remove('hidden');
+          clawStatus.textContent='Achievement unlocked: certified plushie collector ✨';
+          celebrate(window.innerWidth/2,window.innerHeight*.4,36);
+        }else if(clawTries){clawStatus.textContent='So close! The claw machine is being dramatic. Try again?';}
+        else{clawDone=true;clawStatus.textContent='The claw machine wins this round. Your date plans are still unlocked 🫡';}
+        clawRestart.classList.remove('hidden');updateClaw();
+      },reduceMotion?30:740);
+    },reduceMotion?30:740);
+  };
+  document.getElementById('claw-left').addEventListener('click',()=>moveClaw(-1));
+  document.getElementById('claw-right').addEventListener('click',()=>moveClaw(1));
+  document.getElementById('claw-drop').addEventListener('click',dropClaw);
+  clawRestart.addEventListener('click',resetClaw);
+  document.getElementById('claw-next').addEventListener('click',()=>{clawSession++;show(plans);});
+  document.getElementById('claw-back').addEventListener('click',()=>{clawSession++;show(invite);});
+  clawStage.addEventListener('keydown',event=>{
+    if(event.key==='ArrowLeft'){event.preventDefault();moveClaw(-1);}
+    else if(event.key==='ArrowRight'){event.preventDefault();moveClaw(1);}
+    else if(event.key===' '||event.key==='Enter'){event.preventDefault();dropClaw();}
+  });
+
+  document.getElementById('yes').addEventListener('click', () => {
+    celebrate(window.innerWidth/2,Math.min(window.innerHeight*.46,350),45);
+    popQuip('yes');
+    document.getElementById('yes').textContent = 'QUEST ACCEPTED! 🥹';
+    window.setTimeout(() => {
+      resetClaw();
+      show(arcade);
+      document.getElementById("arcade-title").focus({preventScroll:true});
+      document.getElementById('yes').textContent = "Yes, I'd love to";
+    }, reduceMotion?0:480);
+  });
+  document.getElementById('no').addEventListener('click', () => show(decline));
+  document.getElementById('maybe-button').addEventListener('click', () => { show(maybe); toast('No rush, this is not a speedrun 🙂'); });
+  document.getElementById('maybe-back').addEventListener('click', () => show(invite));
+  document.getElementById('send-maybe').addEventListener('click', () => sendReply('Maybe','','',maybeNote.value.trim(),document.getElementById('send-maybe'),maybeStatus));
+  document.getElementById('copy-maybe').addEventListener('click', () => copyReply(maybeReply(),'maybe'));
+  document.getElementById('go-back').addEventListener('click', () => show(invite));
+  document.getElementById('back-invite').addEventListener('click', () => show(invite));
+  cards.forEach(card => card.querySelector('button.choose').addEventListener('click', () => {
+    selectedPlan = card.dataset.plan;
+    cards.forEach(c => {
+      const active = c === card;
+      c.classList.toggle('chosen', active);
+      c.querySelector('button.choose').textContent = active ? 'Selected!' : 'I like this plan';
+    });
+    document.getElementById('picked-name').textContent = selectedPlan + '';
+    timeChoice.value = 'flexible';
+    picked.classList.remove('hidden');
+    updateQuest();
+    popQuip('plan');
+    updateCalendarTools();
+    setStatus(yesStatus, '');
+    celebrate(window.innerWidth/2,window.innerHeight*.4,24);
+    window.setTimeout(() => picked.scrollIntoView({behavior:reduceMotion?'auto':'smooth',block:'start'}),80);
+  }));
+  document.getElementById('yes-form').addEventListener('submit',e => {
+    e.preventDefault();
+    if (!selectedPlan) return setStatus(yesStatus,'Choose a plan first.','bad');
+    if (!dateFlexible.checked && (!dateChoice.value || dateChoice.value < dateChoice.min)) {
+      return setStatus(yesStatus, 'Pick a future date, or tick “let’s decide together”.','bad');
+    }
+    sendReply('Yes',selectedPlan,dateFlexible.checked?'To be decided':formattedDay(dateChoice.value),note.value.trim(),document.getElementById('send-yes'),yesStatus);
+  });
+  document.getElementById('send-no').addEventListener('click', () => {
+    sendReply('No','','','',document.getElementById('send-no'),noStatus);
+  });
+  document.getElementById('copy-yes').addEventListener('click', () => {
+    if (!selectedPlan) return setStatus(yesStatus,'Choose a plan first.','bad');
+    if (!dateFlexible.checked && !dateChoice.value) return setStatus(yesStatus,'Choose a date or tick “let’s decide together”.','bad');
+    if (!dateFlexible.checked && dateChoice.value < dateChoice.min) return setStatus(yesStatus,'Please pick a future date.','bad');
+    copyReply(planReply());
+  });
+  document.getElementById('copy-no').addEventListener('click', () => copyReply(noReply(), 'no'));
+  timeChoice.addEventListener('change', () => { updateCalendarTools(); popQuip('time'); });
+  document.getElementById('date-choice').addEventListener('input', updateCalendarTools);
+  document.getElementById('date-choice').addEventListener('change', updateCalendarTools);
+  document.getElementById('download-ics').addEventListener('click', downloadCalendarFile);
+  document.getElementById('close-manual-copy').addEventListener('click', () => document.getElementById('manual-copy').classList.add('hidden'));
+  document.getElementById('select-copy-text').addEventListener('click', () => {
+    const field = document.getElementById('manual-copy-text'); field.focus(); field.select();
+  });
+  document.getElementById('manual-copy').addEventListener('click', e => {if(e.target.id==='manual-copy') e.currentTarget.classList.add('hidden');});
+  document.addEventListener('keydown', e => {if(e.key==='Escape') document.getElementById('manual-copy').classList.add('hidden');});
+
+  const toastElement = document.getElementById('toast');
+  let toastTimer;
+  function toast(value) {
+    toastElement.textContent = value;
+    toastElement.classList.remove('hidden');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toastElement.classList.add('hidden'),2900);
+  }
+  function celebrate(x,y,pieces=34) {
+    if (reduceMotion) return;
+    const colors=['#eb879c','#e9c878','#bb9bde','#8bc9ac','#a9d6f1','#ffbda4'];
+    for (let i=0;i<pieces;i++) {
+      const p=document.createElement('span');
+      p.className='confetti-piece';
+      const angle=Math.random()*Math.PI*2;
+      const r=80+Math.random()*260;
+      const heart=Math.random()<.27;
+      p.textContent=heart?'✦':(Math.random()<.25?'✦':'');
+      p.style.cssText=[
+        `--x:${x}px`,`--y:${y}px`,`--dx:${Math.cos(angle)*r}px`,`--dy:${Math.sin(angle)*r+90}px`,
+        `--spin:${Math.floor(Math.random()*1000-500)}deg`,`--dur:${(1.1+Math.random()*.9).toFixed(2)}s`,
+        `color:${colors[i%colors.length]}`,`background:${heart||p.textContent?'transparent':colors[i%colors.length]}`,
+        `width:${heart||p.textContent?'auto':Math.floor(6+Math.random()*6)+'px'}`,
+        `height:${heart||p.textContent?'auto':'10px'}`,
+        `font-size:${Math.floor(15+Math.random()*12)}px`,`border-radius:3px`
+      ].join(';');
+      celebrationLayer.appendChild(p);
+      p.addEventListener('animationend',()=>p.remove(),{once:true});
+    }
+  }
+  const quips = {
+    yes: ["Confidence.exe has successfully launched 🎉", "Side quest accepted. Very brave of both of us 🥹", "Achievement unlocked: a little adventure ✨"],
+    plan: ["Excellent choice. I definitely did not overthink these options 👀", "Plan selected. The spreadsheets are shaking 📋", "The itinerary has entered the chat ✨"],
+    time: ["Time choice updated. The calendar is doing its best 🗓️", "No rush, we can settle the time later 🙂", "Planning mode: flexible and stress-free ✨"]
+  };
+  function popQuip(kind) {
+    const set = quips[kind];
+    if (set) toast(set[Math.floor(Math.random()*set.length)]);
+  }
+  document.getElementById('easter-egg').addEventListener('click', () => {
+    celebrate(window.innerWidth * .75, 65, 22);
+    toast('Secret unlocked: I hope this made you smile a little 🐈');
+  });
+  document.getElementById('mail-sticker').addEventListener('click',ev => {
+    const r=ev.currentTarget.getBoundingClientRect();
+    celebrate(r.left+r.width/2,r.top+r.height/2,18);
+    toast('Achievement unlocked: I finally asked you out 🫣');
+  });
+  document.getElementById('surprise').addEventListener('click', () => {
+    const next=cards[Math.floor(Math.random()*cards.length)];
+    next.querySelector('.choose').click();
+    toast('RNG gods have spoken 🎲');
+  });
+  updateQuest();
+  if (!reduceMotion && window.matchMedia('(pointer:fine)').matches) {
+    cards.forEach(card => {
+      card.addEventListener('pointermove',e => {
+        const r=card.getBoundingClientRect();
+        const rx=(e.clientY-(r.top+r.height/2))/r.height;
+        const ry=(e.clientX-(r.left+r.width/2))/r.width;
+        card.style.setProperty('--tiltX',`${(-rx*2.8).toFixed(2)}deg`);
+        card.style.setProperty('--tiltY',`${(ry*2.8).toFixed(2)}deg`);
+      });
+      card.addEventListener('pointerleave',() => {
+        card.style.setProperty('--tiltX','0deg');card.style.setProperty('--tiltY','0deg');
+      });
+    });
+  }
+</script>
+<script src="enhancements.js" defer></script>
+</body>
+</html>

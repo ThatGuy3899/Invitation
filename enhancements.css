@@ -1,0 +1,186 @@
+
+/* V8: location photos, mini-game prize, mobile cards, map, theme */
+:root{--v8-ink:#39312f;--v8-muted:#7e706d}
+header{gap:10px;flex-wrap:wrap}
+#theme-toggle{border:1px solid #e6ced1;background:#fffafc;color:#9c6577;border-radius:999px;padding:9px 13px;min-height:40px;font-size:12px;font-weight:700;cursor:pointer;letter-spacing:0;text-transform:none}
+#theme-toggle:hover{transform:translateY(-1px)}
+.plan-art.photo-active{height:185px;min-height:185px;isolation:isolate}
+.photo-gallery{position:absolute;inset:0;z-index:3;overflow:hidden}
+.photo-gallery img{position:absolute;width:100%;height:100%;inset:0;object-fit:cover;opacity:0;transition:opacity .35s ease;display:block}
+.photo-gallery img.active.loaded{opacity:1}
+.photo-gallery:before{content:"";position:absolute;inset:55% 0 0;background:linear-gradient(transparent,#2415227d);z-index:1;pointer-events:none}
+.photo-nav{position:absolute;top:50%;z-index:4;transform:translateY(-50%);border:1px solid #fff8;background:#ffffffda;color:#714657;border-radius:50%;width:34px;height:34px;font-size:19px;display:grid;place-items:center;cursor:pointer;box-shadow:0 2px 12px #0002}
+.photo-nav.previous{left:9px}.photo-nav.next{right:9px}
+.photo-caption{position:absolute;left:11px;right:11px;bottom:8px;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:6px;color:white;font-size:10px;text-shadow:0 1px 4px #000b}
+.photo-caption a{color:#fff;text-decoration:underline}
+.photo-caption span{font-weight:700}
+.custom-card .plan-art{background:linear-gradient(135deg,#fce7bc,#f4d8f5,#cee8ef)}
+.custom-location-wrap{border-radius:14px;padding:14px;margin:13px auto 18px;background:#fff8f5;border:1px solid #f1dcd9;text-align:left}
+.custom-location-wrap label{font-size:13px;font-weight:700;display:block;margin-bottom:7px;color:#855b6e}
+.custom-location-wrap input{width:100%;box-sizing:border-box;border:1px solid #e1c8ce;background:#fff;color:#45383a;border-radius:11px;padding:12px;font:inherit}
+.custom-location-wrap small{color:#9c7b87;display:block;margin-top:7px;font-size:11px;line-height:1.45}
+.location-preview{margin:14px auto 19px;max-width:530px;background:#fff8f4;border:1px solid #e9d6d6;border-radius:17px;padding:12px;text-align:left}
+.location-preview h3{font:700 14px 'DM Sans',sans-serif!important;margin:2px 0 6px}
+.location-preview .transit{font-size:12px;color:#8b707d;margin:0 0 10px}
+.location-preview iframe{width:100%;height:198px;border:0;border-radius:12px;background:#efddde}
+.location-preview .map-actions{display:flex;gap:9px;justify-content:flex-start;margin-top:9px;flex-wrap:wrap}
+.location-preview .map-actions a{font-size:12px;color:#a35373;text-decoration:underline;text-underline-offset:3px;padding:6px 0}
+#mobile-plan-controls{display:none}
+#arcade-skip{position:sticky;top:9px;z-index:25;float:right;border:1px solid #ead2d7;color:#ae6781;background:#fffdfdee;border-radius:999px;min-height:35px;padding:6px 13px;font-size:11px;font-weight:700}
+.confirmation-card{text-align:center;background:rgba(255,255,255,.94);border:1px solid #fff;border-radius:29px;box-shadow:var(--shadow);padding:52px 25px 42px;max-width:760px;margin:16px auto}
+.confirmation-card h2{font-size:clamp(35px,6vw,57px);margin:8px auto}
+.confirmation-card p{line-height:1.75;color:var(--muted);font-size:14px;max-width:540px;margin:12px auto}
+.confirmation-summary{background:#fff8f5;padding:18px 20px;border-radius:16px;margin:22px auto;max-width:520px;text-align:left;color:#7b5d68;font-size:14px;line-height:1.8;white-space:pre-wrap;border:1px solid #eed6d8}
+.confirmation-card .actions{margin:20px 0}
+#confirmation-calendar{display:none}
+#photo-credits{max-width:780px;margin:24px auto 0;text-align:center;font-size:11px;color:#9a808b}
+#photo-credits summary{cursor:pointer}
+#photo-credits a{color:inherit}
+@media(max-width:780px){
+  .plan-art.photo-active{height:100%;min-height:270px}
+  .photo-gallery{border-radius:17px 0 0 17px}
+}
+@media(max-width:530px){
+  header{padding-bottom:12px}#theme-toggle{margin-left:auto;max-width:100%;font-size:11px}
+  .plan-grid{max-width:none!important;display:flex!important;flex-wrap:nowrap;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:13px;padding:7px 13px 22px;margin:0 -13px!important;-webkit-overflow-scrolling:touch}
+  .plan-grid .plan-card{display:flex!important;flex:0 0 min(82vw,335px);width:min(82vw,335px);scroll-snap-align:center;align-self:stretch;min-width:0}
+  .plan-art.photo-active{height:163px;min-height:163px}
+  .photo-gallery{border-radius:18px 18px 0 0}
+  #mobile-plan-controls{display:flex;justify-content:center;gap:14px;align-items:center;margin:0 0 14px}
+  #mobile-plan-controls button{border:1px solid #e3c9d1;background:#fffaf9;color:#9c617a;min-width:45px;min-height:42px;border-radius:999px;font-size:19px}
+  #mobile-plan-controls span{font-size:12px;font-weight:700;color:#987783}
+  .location-preview iframe{height:180px}.confirmation-card{padding:43px 17px 31px}
+}
+html[data-theme="night"]{color-scheme:dark}
+html[data-theme="night"] body{background:radial-gradient(ellipse at 2% 4%,#533347,transparent 41%),radial-gradient(ellipse at 96% 93%,#42335c,transparent 42%),#201c2b;color:#fbedf4}
+html[data-theme="night"] .invitation,html[data-theme="night"] .arcade-shell,html[data-theme="night"] .confirmation-card,html[data-theme="night"] .plan-card,html[data-theme="night"] .picked,html[data-theme="night"] .quest-track{background:#312739f2;border-color:#71566c;box-shadow:0 20px 48px #120c1a55;color:#f7e9f1}
+html[data-theme="night"] .plan-body,html[data-theme="night"] .copy-overlay-card{background:#312739}
+html[data-theme="night"] .secondary,html[data-theme="night"] #theme-toggle,html[data-theme="night"] #mobile-plan-controls button,html[data-theme="night"] #arcade-skip{background:#45334a;color:#f0dbe5;border-color:#78576e}
+html[data-theme="night"] .lede,html[data-theme="night"] .plan-sub,html[data-theme="night"] .sectionhead p,html[data-theme="night"] .confirmation-card p,html[data-theme="night"] .picked p{color:#d6bfcf}
+html[data-theme="night"] .itinerary,html[data-theme="night"] .location-preview,html[data-theme="night"] .custom-location-wrap,html[data-theme="night"] .confirmation-summary,html[data-theme="night"] .calendar-tools{background:#392d42;border-color:#6d5369;color:#eedce8}
+html[data-theme="night"] .reply-form input,html[data-theme="night"] .reply-form textarea,html[data-theme="night"] .reply-form select,html[data-theme="night"] .maybe-note-wrap textarea,html[data-theme="night"] .custom-location-wrap input,html[data-theme="night"] .copy-overlay-card textarea{background:#32263a;color:#ffedf8;border-color:#78556d}
+html[data-theme="night"] .timeline .stage-num,html[data-theme="night"] .itinerary summary,html[data-theme="night"] .itinerary .map-link{background:#4c3850;color:#f7b8d2}
+html[data-theme="night"] .arcade-prize{background:#45344b;color:#ffeaf3;border-color:#bb879e}
+html[data-theme="night"] .photo-caption a{color:white}
+html[data-theme="night"] header,html[data-theme="night"] .quest-hint,html[data-theme="night"] .stats{color:#e1c5d7}
+html[data-theme="night"] .location-preview .transit,html[data-theme="night"] .custom-location-wrap small{color:#d7b8ce}
+html[data-theme="night"] .plan-card.chosen{border-color:#e99abc}
+html[data-theme="night"] .footer{color:#c6aac0}
+html[data-theme="night"] .claw-stage{border-color:#a37b9e;background:radial-gradient(circle at 45% 20%,#5b4665,#3b314e)}
+@media(prefers-reduced-motion:reduce){.photo-gallery img{transition:none!important}}
+
+/* Finishing pass: clarity, accessibility, and lighter mobile loads */
+.skip-to-invitation{position:absolute;left:12px;top:-100px;z-index:300;padding:12px 18px;background:#3b2d36;color:#fff;border-radius:0 0 12px 12px;font-size:14px;font-weight:700}
+.skip-to-invitation:focus{top:0}
+.personal-note{max-width:490px;margin:-10px auto 22px!important;padding:13px 17px;border:1px solid #f0d8dd;border-radius:15px;background:#fff7f9;color:#76545f!important;font-size:14px;line-height:1.75}
+.photo-gallery[hidden],.location-preview iframe[hidden],.location-preview a[hidden],.location-preview button[hidden]{display:none!important}
+.photo-nav:focus-visible,.map-preview-button:focus-visible,#arcade-skip:focus-visible,#theme-toggle:focus-visible,.skip-to-invitation:focus-visible{outline:3px solid #78436c;outline-offset:3px}
+.map-preview-button{width:100%;background:#fff6f9;border:1px dashed #dcb1bd;border-radius:12px;padding:14px 12px;min-height:48px;font-size:13px;font-weight:700;color:#915e77;cursor:pointer}
+.map-preview-button:hover{background:#ffe9f3}
+.confirmation-update-note{max-width:470px;margin:10px auto!important;font-size:12px!important;color:#826c77!important}
+.reply-form .field-hint,.reply-form .optional{color:#78606c!important}
+.quest-hint{color:#785f68!important}
+.under{color:#7c606e!important}
+#claw-next,#arcade-skip{touch-action:manipulation}
+@media(max-width:530px){
+  #arcade-skip{position:static;float:none;display:block;margin:0 0 14px auto;min-height:42px}
+  .photo-nav{width:40px;height:40px}
+  .photo-caption{font-size:10px}
+  .personal-note{font-size:13px;line-height:1.6;padding:12px 13px}
+  #mobile-plan-controls button{min-width:48px;min-height:48px}
+  .plan-grid{overscroll-behavior-inline:contain}
+}
+html[data-theme="night"] .personal-note{background:#3e2d41;border-color:#75566b;color:#f7dce8!important}
+html[data-theme="night"] .map-preview-button{background:#49354f;color:#fae1ed;border-color:#a47c95}
+html[data-theme="night"] .reply-form .field-hint,html[data-theme="night"] .reply-form .optional,html[data-theme="night"] .confirmation-update-note,html[data-theme="night"] .quest-hint,html[data-theme="night"] .under{color:#ecd3e1!important}
+html[data-theme="night"] .photo-caption a{color:white}
+@media(prefers-reduced-motion:reduce){.plan-grid{scroll-behavior:auto!important}.photo-gallery img{transition:none!important}}
+
+/* Final touches: practical meet-ups, rain plans, and a handwritten thank-you */
+.comfort-tips{margin:0 0 16px;border:1px solid #eddbda;background:#fff9f7;border-radius:14px;overflow:hidden}
+.comfort-tips summary{list-style:none;display:flex;align-items:center;justify-content:space-between;min-height:44px;padding:10px 12px;color:#a05e76;font-size:12px;font-weight:700;line-height:1.45;cursor:pointer}
+.comfort-tips summary::-webkit-details-marker{display:none}
+.comfort-tips summary:after{content:"⌄";display:inline-block;font-size:20px;margin-left:8px;transition:transform .2s}
+.comfort-tips[open] summary:after{transform:rotate(180deg)}
+.comfort-tips p{margin:0;padding:5px 13px 11px;color:#765d68;font-size:12px;line-height:1.65}
+.comfort-tips strong{color:#9a5971}
+.comfort-tips .comfort-reminder{background:#fff1f3;padding:10px 13px;color:#946a7b;font-size:11px}
+.selected-comfort{display:grid;gap:10px;margin:12px 0 14px}
+.selected-comfort p{margin:0;padding:11px 13px;background:#fff;border:1px solid #f0dcdc;border-radius:12px;color:#735768;font-size:12px;line-height:1.65}
+.selected-comfort strong{display:block;color:#a45f7d;margin-bottom:4px;font-size:12px}
+.selected-comfort span{display:block}
+.selected-comfort small{font-size:11px;color:#92717e;line-height:1.55}
+.closing-letter{box-sizing:border-box;width:min(100%,600px);margin:33px auto 16px;text-align:center;border:1px solid #efd4d5;border-radius:22px;padding:23px 23px 18px;background:linear-gradient(145deg,#fffdfa,#fff3f5);box-shadow:0 9px 28px #8d627a10;transform:rotate(-.7deg)}
+.closing-letter p{font-family:'Caveat','Segoe Print','Bradley Hand',cursive;font-size:clamp(23px,3.7vw,31px);line-height:1.26;font-weight:600;color:#9c607a;margin:0 auto 8px}
+.closing-letter .letter-heart{display:block;font-size:24px;color:#d98da5;line-height:1.1;margin-bottom:6px}
+.closing-letter .letter-signature{font-family:'Caveat','Segoe Print','Bradley Hand',cursive;font-size:21px;color:#b38691}
+.confirmation-companion{display:flex;align-items:center;justify-content:center;gap:12px;max-width:440px;margin:16px auto 0;padding:13px 15px;background:#fff7ee;border:1px dashed #e6b6b5;border-radius:18px}
+.confirmation-companion>span{font-size:43px;line-height:1.1;display:block;filter:drop-shadow(0 4px 5px #dba9a540);animation:emojiDance 3s ease-in-out infinite}
+.confirmation-companion p{font-size:13px!important;line-height:1.5!important;text-align:left;margin:0!important;color:#946274!important}
+html[data-theme="night"] .comfort-tips,html[data-theme="night"] .closing-letter{background:#3b3043;border-color:#775569}
+html[data-theme="night"] .comfort-tips summary,html[data-theme="night"] .comfort-tips strong,html[data-theme="night"] .selected-comfort strong{color:#f0bed0}
+html[data-theme="night"] .comfort-tips p,html[data-theme="night"] .selected-comfort p{color:#f1d9e5}
+html[data-theme="night"] .comfort-tips .comfort-reminder,html[data-theme="night"] .selected-comfort p{background:#4b3a51;border-color:#75566b}
+html[data-theme="night"] .selected-comfort small{color:#d8bdcb}
+html[data-theme="night"] .closing-letter p{color:#f4cedf}
+html[data-theme="night"] .closing-letter .letter-signature{color:#d4adbc}
+html[data-theme="night"] .confirmation-companion{background:#44354c;border-color:#b4889e}
+html[data-theme="night"] .confirmation-companion p{color:#f2d0df!important}
+@media(max-width:530px){
+  .comfort-tips{margin-bottom:13px}
+  .selected-comfort{gap:8px}
+  .closing-letter{width:calc(100% - 18px);padding:21px 14px 16px;margin-top:26px;transform:none}
+  .closing-letter p{font-size:26px}
+  .confirmation-companion{gap:9px;padding:11px}
+  .confirmation-companion>span{font-size:36px}
+}
+@media(prefers-reduced-motion:reduce){
+  .confirmation-companion>span{animation:none!important}
+  .comfort-tips summary:after{transition:none!important}
+}
+
+/* A small, personal greeting without overwhelming the invitation */
+.recipient-greeting{
+  font-family:'Caveat','Segoe Print','Bradley Hand',cursive;
+  font-size:clamp(27px,4vw,37px);
+  line-height:1.15;
+  font-weight:600;
+  color:#bd718c;
+  margin:15px auto -6px;
+  transform:rotate(-2deg);
+}
+html[data-theme="night"] .recipient-greeting{color:#f1b7d1}
+@media(max-width:530px){.recipient-greeting{margin:14px auto -4px}}
+@media(prefers-reduced-motion:reduce){.recipient-greeting{transform:none}}
+
+
+/* Quiet, optional photo meme gallery: only appears when the existing surprises are tapped. */
+.meme-dialog{box-sizing:border-box;width:min(92vw,435px);max-height:min(92dvh,800px);margin:auto;padding:0;border:1px solid #edd4d7;border-radius:22px;background:#fffaf8;color:#715b64;box-shadow:0 25px 80px #321c3359;overflow-y:auto}
+.meme-dialog::backdrop{background:#25182698;backdrop-filter:blur(5px)}
+.meme-inner{padding:17px 17px 14px;text-align:center}
+.meme-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 12px}
+.meme-bar span{font-weight:800;color:#a56881;font-size:15px;letter-spacing:.01em}
+.meme-dialog button{cursor:pointer;min-height:40px;border:1px solid #e5cbd1;border-radius:13px;background:#fff;color:#8a5c73;font:inherit;font-size:12px;font-weight:700;padding:8px 14px}
+.meme-dialog button:hover{background:#fff0f4}
+.meme-dialog button:focus-visible{outline:3px solid #ad7395;outline-offset:3px}
+.meme-figure{margin:0}
+.meme-visual{position:relative;isolation:isolate;width:100%;aspect-ratio:1.08;max-height:365px;overflow:hidden;border-radius:13px;background:linear-gradient(140deg,#e8d8ce,#f3cdd8);display:grid;place-items:center}
+.meme-visual img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+.meme-visual img[hidden],.meme-fallback[hidden]{display:none!important}
+.meme-fallback{font-size:110px;line-height:1}
+.meme-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(#0008,transparent 28%,transparent 60%,#000b);pointer-events:none}
+.meme-caption{position:absolute;z-index:2;left:11px;right:11px;text-align:center;color:white;font-family:Impact,'Arial Black',system-ui,sans-serif;font-size:clamp(20px,4.7vw,28px);font-weight:900;line-height:1.05;letter-spacing:.025em;overflow-wrap:break-word;paint-order:stroke fill;-webkit-text-stroke:2px #17121a;text-shadow:1px 3px 2px #000a}
+.meme-top{top:12px}
+.meme-bottom{bottom:13px}
+.meme-credit{color:#9c858e;font-size:10px;line-height:1.6;margin:8px 0 0}
+.meme-credit a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.meme-controls{display:flex;justify-content:space-between;gap:7px;align-items:center;margin-top:14px}
+.meme-controls span{font-size:11px;color:#947a85;white-space:nowrap}
+.meme-disclaimer{font-size:11px;line-height:1.6;color:#977c87;margin:12px 3px 0}
+html[data-theme="night"] .meme-dialog{background:#33283b;color:#f1dce9;border-color:#77556a}
+html[data-theme="night"] .meme-dialog button{background:#44334c;color:#eed7e5;border-color:#78576e}
+html[data-theme="night"] .meme-dialog button:hover{background:#503b57}
+html[data-theme="night"] .meme-bar span{color:#efbad2}
+html[data-theme="night"] .meme-credit,html[data-theme="night"] .meme-controls span,html[data-theme="night"] .meme-disclaimer{color:#d6bccc}
+@media(max-width:530px){.meme-dialog{width:min(95vw,410px);max-height:92dvh;border-radius:17px}.meme-inner{padding:12px}.meme-caption{font-size:clamp(17px,5.8vw,25px);-webkit-text-stroke:1.4px #17121a}.meme-visual{aspect-ratio:1.02}.meme-controls button{padding:8px 10px}}
+@media(prefers-reduced-motion:reduce){.meme-dialog::backdrop{backdrop-filter:none}}
