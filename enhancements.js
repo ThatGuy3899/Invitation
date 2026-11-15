@@ -233,7 +233,7 @@
       card.classList.remove("chosen");
       $(".choose",card).textContent="I like this plan";
     });
-    $(".budget-card").forEach(card=>{
+    $$(".budget-card").forEach(card=>{
       card.classList.remove("chosen");
       const button=$(".budget-choose",card);
       button.textContent="Pick this adventure";
@@ -258,7 +258,7 @@
     updateMap();
   };
   cards.forEach(card=>$(".choose",card).addEventListener("click",clearCustomSelection));
-  $(".budget-card").forEach(card=>$(".budget-choose",card).addEventListener("click",clearCustomSelection));
+  $$(".budget-card").forEach(card=>$(".budget-choose",card).addEventListener("click",clearCustomSelection));
   customInput.addEventListener("input",()=>{
     SCHEDULES[suggestedName].location=safeText(customInput.value);
     updateMap();updateCalendarTools();
