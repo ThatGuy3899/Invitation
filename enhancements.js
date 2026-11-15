@@ -293,7 +293,7 @@
     $("#confirmation-title").textContent=yes?"Your date idea has been sent! ✨":maybe?"Message sent, no rush 🙂":"Thank you for answering 🌷";
     $("#confirmation-desc").textContent=yes?"Your choice was submitted. We can confirm the details together in our chat.":maybe?"Your message was submitted. We can keep chatting and see what feels right.":"Your answer was submitted. Thanks for letting me know.";
     $("#confirmation-footnote").textContent=yes?"Nothing is booked until we both confirm in chat.":maybe?"No rush — we can keep things relaxed.":"No pressure to explain or change your mind.";
-    const details=yes ? "Plan: "+selectedPlan+"\nPlace: "+(selectedPlan===suggestedName ? safeText(customInput.value)||"To be decided" : locationInfo[selectedPlan]?.where||selectedPlan)+"\nDate: "+(dateFlexible.checked?"To be decided":formattedDay(dateChoice.value))+"\nTime: "+formattedTime() : maybe ? "Response: Maybe\nNote: "+(safeText($("#maybe-note").value)||"None") : "Response: No, thank you";
+    const details=yes ? "Plan: "+selectedPlan+"\nPlace: "+(selectedPlan===suggestedName ? safeText(customInput.value)||"To be decided" : locationInfo[selectedPlan]?.where||selectedPlan)+"\nDate: "+(dateFlexible.checked?"To be decided":formattedDay(dateChoice.value))+"\nTime: "+formattedTime()+(foodPreferences.value.trim()?"\nFood allergies / preferences: "+foodPreferences.value.trim():"") : maybe ? "Response: Maybe\nNote: "+(safeText($("#maybe-note").value)||"None") : "Response: No, thank you";
     $("#confirmation-summary").textContent=details;
     const event=yes?calendarEvent():null;
     const link=$("#confirmation-calendar");
