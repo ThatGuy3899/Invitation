@@ -33,11 +33,6 @@
       meet:"At the National Art Gallery main entrance after taking the MRT; we can confirm a simple landmark in chat.",
       rain:"The galleries are indoors, so we can explore the exhibitions and skip any outdoor walk afterwards."
     },
-    "City Views & Little Discoveries":{
-      where:"Tuah 1895, Jalan Hang Tuah, Kuala Lumpur",transit:"Hang Tuah LRT / Monorail · short walk to Tuah 1895",details:"Usually-free viewing deck, optional LaLaport BBCC",search:"Tuah 1895 viewing deck Kuala Lumpur",
-      meet:"At Hang Tuah station or by Tuah 1895, whichever is easier to find. We can confirm the spot in chat.",
-      rain:"If the viewing deck is closed for an event, or the weather's bad, we can move the date indoors to LaLaport BBCC."
-    },
     "Chinatown Photo Walk":{
       where:"Kwai Chai Hong, Lorong Panggung, Kuala Lumpur",transit:"Pasar Seni MRT / LRT · short walk to Kwai Chai Hong",details:"Free murals and photos; optional Central Market",search:"Kwai Chai Hong Lorong Panggung Kuala Lumpur",
       meet:"At Pasar Seni station near the MRT Exit A direction, then we can walk together towards Kwai Chai Hong.",
