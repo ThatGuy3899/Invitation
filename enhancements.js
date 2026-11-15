@@ -27,6 +27,21 @@
       where:"118 Mall, Jalan Hang Jebat",transit:"Merdeka MRT · linked to the mall; Plaza Rakyat LRT also connected",details:"Explore a new mall and choose from open shops",search:"118 Mall Kuala Lumpur",
       meet:"Near the sheltered connection from Merdeka MRT or Plaza Rakyat LRT — whichever is easier for you. We'll confirm the exact meeting point in chat.",
       rain:"We can stay inside 118 Mall and choose from shops and cafés that are open, skipping outdoor photos. Some shops are still opening."
+    },
+    "Art Gallery Afternoon":{
+      where:"National Art Gallery, Jalan Temerloh, Kuala Lumpur",transit:"Hospital Kuala Lumpur MRT (Putrajaya Line), Gate B · walk to the gallery",details:"Free indoor gallery visit; optional café afterwards",search:"National Art Gallery Jalan Temerloh Kuala Lumpur",
+      meet:"At the National Art Gallery main entrance after taking the MRT; we can confirm a simple landmark in chat.",
+      rain:"The galleries are indoors, so we can explore the exhibitions and skip any outdoor walk afterwards."
+    },
+    "City Views & Little Discoveries":{
+      where:"Tuah 1895, Jalan Hang Tuah, Kuala Lumpur",transit:"Hang Tuah LRT / Monorail · short walk to Tuah 1895",details:"Usually-free viewing deck, optional LaLaport BBCC",search:"Tuah 1895 viewing deck Kuala Lumpur",
+      meet:"At Hang Tuah station or by Tuah 1895, whichever is easier to find. We can confirm the spot in chat.",
+      rain:"If the viewing deck is closed for an event, or the weather's bad, we can move the date indoors to LaLaport BBCC."
+    },
+    "Chinatown Photo Walk":{
+      where:"Kwai Chai Hong, Lorong Panggung, Kuala Lumpur",transit:"Pasar Seni MRT / LRT · short walk to Kwai Chai Hong",details:"Free murals and photos; optional Central Market",search:"Kwai Chai Hong Lorong Panggung Kuala Lumpur",
+      meet:"At Pasar Seni station near the MRT Exit A direction, then we can walk together towards Kwai Chai Hong.",
+      rain:"Kwai Chai Hong is an outdoor alley. If it rains or gets too hot, we can head indoors at Central Market."
     }
   };
   const openEndedTips = {
@@ -218,6 +233,12 @@
       card.classList.remove("chosen");
       $(".choose",card).textContent="I like this plan";
     });
+    $(".budget-card").forEach(card=>{
+      card.classList.remove("chosen");
+      const button=$(".budget-choose",card);
+      button.textContent="Pick this adventure";
+      button.setAttribute("aria-pressed","false");
+    });
     customCard.classList.add("chosen");
     $(".choose",customCard).textContent="Selected!";
     $("#picked-name").textContent="Your own suggestion";
@@ -230,10 +251,14 @@
     window.setTimeout(()=>picked.scrollIntoView({behavior:reduceMotion?"auto":"smooth",block:"start"}),80);
   };
   $(".choose",customCard).addEventListener("click",selectCustom);
-  cards.forEach(card=>$(".choose",card).addEventListener("click",()=>{
-    customCard.classList.remove("chosen");$(".choose",customCard).textContent="Suggest a place";
-    customWrap.classList.add("hidden");updateMap();
-  }));
+  const clearCustomSelection=()=>{
+    customCard.classList.remove("chosen");
+    $(".choose",customCard).textContent="Suggest a place";
+    customWrap.classList.add("hidden");
+    updateMap();
+  };
+  cards.forEach(card=>$(".choose",card).addEventListener("click",clearCustomSelection));
+  $(".budget-card").forEach(card=>$(".budget-choose",card).addEventListener("click",clearCustomSelection));
   customInput.addEventListener("input",()=>{
     SCHEDULES[suggestedName].location=safeText(customInput.value);
     updateMap();updateCalendarTools();
