@@ -442,6 +442,9 @@
             <option value="17:30">5:30 PM</option>
             <option value="18:00">6:00 PM</option>
           </select>
+          <label for="food-preferences">🍽️ Any food allergies or dietary preferences I should keep in mind? <span class="optional">(optional)</span></label>
+          <textarea id="food-preferences" name="food_preferences" rows="2" maxlength="200" placeholder="e.g. Allergic to peanuts / vegetarian / no spicy food"></textarea>
+          <p class="field-hint">Only share what you're comfortable with. We can also talk about it in chat.</p>
           <label for="tiny-note">💬 Anything you want to add? <span class="optional">(optional)</span></label>
           <textarea id="tiny-note" name="note" rows="2" maxlength="250" placeholder="e.g. Can we go a little later? / I vote for dessert 🍰"></textarea>
           <p class="feedback" id="yes-status" role="status" aria-live="polite"></p>
@@ -498,6 +501,7 @@
   const dateChoice = document.getElementById('date-choice');
   const dateFlexible = document.getElementById('date-flexible');
   const note = document.getElementById('tiny-note');
+  const foodPreferences = document.getElementById('food-preferences');
   const yesStatus = document.getElementById('yes-status');
   const noStatus = document.getElementById('no-status');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -620,7 +624,7 @@
   };
   const planReply = () => {
     const when = dateFlexible.checked ? "We can choose the day together" : formattedDay(dateChoice.value);
-    return `Hey! I'd love to go on a date 😊\nPlan: ${selectedPlan}${selectedPlan === 'Your own suggestion' ? `\nMy location idea: ${document.getElementById('custom-place')?.value.trim() || 'Let us choose together'}` : ''}\nDate: ${when}\nTime: ${formattedTime()}${note.value.trim()?`\nNote: ${note.value.trim()}`:''}`;
+    return `Hey! I'd love to go on a date 😊\nPlan: ${selectedPlan}${selectedPlan === 'Your own suggestion' ? `\nMy location idea: ${document.getElementById('custom-place')?.value.trim() || 'Let us choose together'}` : ''}\nDate: ${when}\nTime: ${formattedTime()}${foodPreferences.value.trim()?`\nFood allergies / preferences: ${foodPreferences.value.trim()}`:''}${note.value.trim()?`\nNote: ${note.value.trim()}`:''}`;
   };
   const maybeReply = () => "Hey! I'm not quite sure about a date yet, but I'd be happy to chat about it first 😊" + (maybeNote.value.trim() ? `\nNote: ${maybeNote.value.trim()}` : '');
   const noReply = () => "Hey, thanks for asking! I don't think a date is for me, but I appreciate the invitation :)";
@@ -694,6 +698,7 @@
       payload.append('chosen_date', date || 'Not applicable');
       payload.append('chosen_time_myt', reply === 'Yes' ? formattedTime() : 'Not applicable');
       payload.append('note', extraNote || '');
+      payload.append('food_allergies_or_preferences', reply === 'Yes' ? (foodPreferences.value.trim() || 'Not specified') : 'Not applicable');
       payload.append('subject', (answerRevision ? 'UPDATED Yudit invitation reply — ' : 'Yudit invitation reply — ') + reply.toUpperCase());
       payload.append('reply_update', answerRevision ? 'UPDATED ANSWER — please use this answer instead of earlier submissions' : 'Original answer');
       payload.append('reply_version', String(answerRevision + 1));
