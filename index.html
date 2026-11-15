@@ -700,7 +700,13 @@
       payload.append('chosen_time_myt', reply === 'Yes' ? formattedTime() : 'Not applicable');
       payload.append('note', extraNote || '');
       payload.append('food_allergies_or_preferences', reply === 'Yes' ? (foodPreferences.value.trim() || 'Not specified') : 'Not applicable');
-      payload.append('subject', (answerRevision ? 'UPDATED Yudit invitation reply — ' : 'Yudit invitation reply — ') + reply.toUpperCase());
+      // Tests use ?test=1. Normal invitation-link replies get a distinct email subject.
+      // This marks which link was used, not the identity of the person submitting.
+      const isTestSubmission = new URLSearchParams(window.location.search).get('test') === '1';
+      const submissionLabel = isTestSubmission ? '[TEST]' : '[YUDIT LINK]';
+      payload.append('submission_type', isTestSubmission ? 'TEST — sent using ?test=1' : 'Regular invitation link — not identity verified');
+      payload.append('submission_version', 'After Yudit invite labeling update');
+      payload.append('subject', submissionLabel + ' ' + (answerRevision ? 'UPDATED Yudit invitation reply — ' : 'Yudit invitation reply — ') + reply.toUpperCase());
       payload.append('reply_update', answerRevision ? 'UPDATED ANSWER — please use this answer instead of earlier submissions' : 'Original answer');
       payload.append('reply_version', String(answerRevision + 1));
       payload.append('chosen_date_iso', reply==='Yes' && !dateFlexible.checked ? dateChoice.value : 'Not set');
