@@ -374,7 +374,7 @@
       <button class="quiet" type="button" id="claw-back">← Back to the question</button>
     </section>
     <section class="plans hidden in" id="plans" aria-label="Choose a date plan">
-      <div class="sectionhead"><div class="eyebrow">Quest accepted! +100 courage</div><div class="happy-face" aria-hidden="true">😊✨</div><h2>Choose your <span class="rose">side quest</span></h2><p>I prepared four possible adventures. Choose whichever sounds fun. <br>You pick the day; we can figure out the meeting time together!</p></div>
+      <div class="sectionhead"><div class="eyebrow">Quest accepted! +100 courage</div><div class="happy-face" aria-hidden="true">😊✨</div><h2>Choose your <span class="rose">side quest</span></h2><p>Four easygoing ideas to start with, plus a few free-entry adventures below. Choose whatever sounds fun — we can figure out the day and time together!</p></div>
       <div class="plan-grid">
         <article class="plan-card" data-plan="REXKL & Central Market">
           <div class="plan-art art-1"><span class="art-emoji" aria-hidden="true">📚☕</span></div>
@@ -410,6 +410,53 @@
           <button class="btn secondary choose" type="button" aria-label="Choose 118 Mall and Merdeka 118">I like this plan</button></div>
         </article>
       </div>
+
+      <section class="budget-adventures" aria-labelledby="budget-title">
+        <div class="budget-heading">
+          <div class="eyebrow">LOW-KEY PLANS · FREE TO EXPLORE ✨</div>
+          <h3 id="budget-title">Or maybe a <span class="rose">little adventure?</span></h3>
+          <p>If you're up for something simple, here are three easy spots we could explore together. No tickets for the main activity — just us deciding where to go.</p>
+        </div>
+        <div class="budget-grid">
+          <article class="budget-card" data-budget-plan="Art Gallery Afternoon">
+            <div class="budget-top"><span class="budget-emoji" aria-hidden="true">🎨</span><span class="budget-tag">Free admission</span></div>
+            <h4>Art gallery afternoon</h4>
+            <p class="budget-description">Browse a few artworks, pick our favourites, and maybe find a snack afterwards. An easy indoor option.</p>
+            <p class="budget-train">🚇 Hospital Kuala Lumpur MRT · Putrajaya Line</p>
+            <details class="budget-details"><summary>Our little plan <span aria-hidden="true">⌄</span></summary>
+              <ol><li>Meet near the gallery entrance</li><li>Look around the exhibitions at our own pace</li><li>Optional coffee or a bite afterwards</li></ol>
+              <p>National Art Gallery · usually 9 AM–5 PM, last entry 4 PM. Check the day's exhibitions before we go.</p>
+              <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&amp;query=National%20Art%20Gallery%20Jalan%20Temerloh%20Kuala%20Lumpur">View location ↗</a>
+            </details>
+            <button type="button" class="btn secondary budget-choose" aria-label="Choose Art Gallery Afternoon" aria-pressed="false">Pick this adventure</button>
+          </article>
+          <article class="budget-card" data-budget-plan="City Views & Little Discoveries">
+            <div class="budget-top"><span class="budget-emoji" aria-hidden="true">🌇</span><span class="budget-tag">Usually free</span></div>
+            <h4>City views & little discoveries</h4>
+            <p class="budget-description">Skyline photos at Tuah 1895, followed by an optional wander around LaLaport BBCC.</p>
+            <p class="budget-train">🚈 Hang Tuah LRT / Monorail</p>
+            <details class="budget-details"><summary>Our little plan <span aria-hidden="true">⌄</span></summary>
+              <ol><li>Meet around Hang Tuah station</li><li>Check out the Tuah 1895 viewing deck if it's accessible</li><li>Optional LaLaport wander or dessert</li></ol>
+              <p>The deck is generally free, but access can change for events. If it's closed or too hot, we can stay indoors at LaLaport instead.</p>
+              <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&amp;query=Tuah%201895%20Plaza%20Jalan%20Hang%20Tuah%20Kuala%20Lumpur">View location ↗</a>
+            </details>
+            <button type="button" class="btn secondary budget-choose" aria-label="Choose City Views and Little Discoveries" aria-pressed="false">Pick this adventure</button>
+          </article>
+          <article class="budget-card" data-budget-plan="Chinatown Photo Walk">
+            <div class="budget-top"><span class="budget-emoji" aria-hidden="true">📸</span><span class="budget-tag">Free entry</span></div>
+            <h4>Chinatown photo walk</h4>
+            <p class="budget-description">Murals, lanterns and cute photo spots at Kwai Chai Hong, with Central Market nearby.</p>
+            <p class="budget-train">🚇 Pasar Seni MRT / LRT</p>
+            <details class="budget-details"><summary>Our little plan <span aria-hidden="true">⌄</span></summary>
+              <ol><li>Meet at Pasar Seni MRT / LRT</li><li>Explore Kwai Chai Hong and take some pictures</li><li>Optional indoor browse at Central Market or dessert</li></ol>
+              <p>Easy to explore on foot. We can switch to Central Market if it rains or gets too warm.</p>
+              <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&amp;query=Kwai%20Chai%20Hong%20Lorong%20Panggung%20Kuala%20Lumpur">View location ↗</a>
+            </details>
+            <button type="button" class="btn secondary budget-choose" aria-label="Choose Chinatown Photo Walk" aria-pressed="false">Pick this adventure</button>
+          </article>
+        </div>
+        <p class="budget-footnote">Free entry refers to the places above, not train fares, food or shopping. Everything's optional, and we can always adjust the plan together :)</p>
+      </section>
       <div class="surprise-wrap"><span class="surprise-label">Can't decide? I got you ✨</span><button class="surprise" type="button" id="surprise"><span aria-hidden="true">🎲</span> Surprise me!</button></div>
       <section class="picked hidden in" id="picked" aria-live="polite">
         <div class="picked-icon" aria-hidden="true">✨</div>
@@ -554,7 +601,10 @@
     'REXKL & Central Market': {durationMinutes:150, location:'Central Market, Jalan Hang Kasturi, Kuala Lumpur, Malaysia'},
     'The Exchange TRX': {durationMinutes:150, location:'The Exchange TRX, Kuala Lumpur, Malaysia'},
     'LaLaport BBCC': {durationMinutes:150, location:'LaLaport BBCC, 2 Jalan Hang Tuah, Kuala Lumpur, Malaysia'},
-    '118 Mall & Merdeka 118': {durationMinutes:150, location:'118 Mall, Jalan Hang Jebat, Kuala Lumpur, Malaysia'}
+    '118 Mall & Merdeka 118': {durationMinutes:150, location:'118 Mall, Jalan Hang Jebat, Kuala Lumpur, Malaysia'},
+    'Art Gallery Afternoon': {durationMinutes:120, location:'National Art Gallery, 2 Jalan Temerloh, 53200 Kuala Lumpur, Malaysia'},
+    'City Views & Little Discoveries': {durationMinutes:120, location:'Tuah 1895, 2 Jalan Hang Tuah, Bukit Bintang, Kuala Lumpur, Malaysia'},
+    'Chinatown Photo Walk': {durationMinutes:120, location:'Kwai Chai Hong, Lorong Panggung, Kuala Lumpur, Malaysia'}
   };
   const pad2 = n => String(n).padStart(2,'0');
   const utcIcs = d => d.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'');
@@ -578,7 +628,10 @@
       'REXKL & Central Market': 'Start at Central Market for food, crafts and conversation; optional REXKL if the weather feels comfortable.',
       'The Exchange TRX': 'Coffee or matcha, food and indoor shopping, with an optional rooftop visit if the weather is nice.',
       'LaLaport BBCC': 'Coffee, food and interesting shops, with optional K-pop and collectibles browsing.',
-      '118 Mall & Merdeka 118': 'Discover open shops, architecture and food at 118 Mall, with flexible plans while more stores open.'
+      '118 Mall & Merdeka 118': 'Discover open shops, architecture and food at 118 Mall, with flexible plans while more stores open.',
+      'Art Gallery Afternoon': 'Explore National Art Gallery together, then optional coffee or food. Free entry to the gallery.',
+      'City Views & Little Discoveries': 'Tuah 1895 skyline view if accessible, then optional LaLaport BBCC. Viewing deck usually free; check access.',
+      'Chinatown Photo Walk': 'Walk around Kwai Chai Hong, take photos and optionally explore Central Market. Free to visit the murals.'
     };
     const details = (detailsByPlan[selectedPlan] || 'Coffee, food and a relaxed afternoon exploring together.') + ' Tentative until we confirm together in our chat. (Malaysia time)';
     const url = new URL('https://calendar.google.com/calendar/r/eventedit');
@@ -827,14 +880,25 @@
   document.getElementById('copy-maybe').addEventListener('click', () => copyReply(maybeReply(),'maybe'));
   document.getElementById('go-back').addEventListener('click', () => show(invite));
   document.getElementById('back-invite').addEventListener('click', () => show(invite));
-  cards.forEach(card => card.querySelector('button.choose').addEventListener('click', () => {
-    selectedPlan = card.dataset.plan;
+  // Main plans and free-entry mini plans share the same scheduling / reply flow.
+  const budgetCards = Array.from(document.querySelectorAll('.budget-card'));
+  const selectDatePlan = (planName, activeCard) => {
+    selectedPlan = planName;
     cards.forEach(c => {
-      const active = c === card;
+      const active = c === activeCard;
       c.classList.toggle('chosen', active);
-      c.querySelector('button.choose').textContent = active ? 'Selected!' : 'I like this plan';
+      const button = c.querySelector('button.choose');
+      button.textContent = active ? 'Selected!' : 'I like this plan';
+      button.setAttribute('aria-pressed', String(active));
     });
-    document.getElementById('picked-name').textContent = selectedPlan + '';
+    budgetCards.forEach(c => {
+      const active = c === activeCard;
+      c.classList.toggle('chosen', active);
+      const button = c.querySelector('.budget-choose');
+      button.textContent = active ? 'Selected!' : 'Pick this adventure';
+      button.setAttribute('aria-pressed', String(active));
+    });
+    document.getElementById('picked-name').textContent = selectedPlan;
     timeChoice.value = 'flexible';
     picked.classList.remove('hidden');
     updateQuest();
@@ -843,7 +907,9 @@
     setStatus(yesStatus, '');
     celebrate(window.innerWidth/2,window.innerHeight*.4,24);
     window.setTimeout(() => picked.scrollIntoView({behavior:reduceMotion?'auto':'smooth',block:'start'}),80);
-  }));
+  };
+  cards.forEach(card => card.querySelector('button.choose').addEventListener('click', () => selectDatePlan(card.dataset.plan, card)));
+  budgetCards.forEach(card => card.querySelector('.budget-choose').addEventListener('click', () => selectDatePlan(card.dataset.budgetPlan, card)));
   document.getElementById('yes-form').addEventListener('submit',e => {
     e.preventDefault();
     if (!selectedPlan) return setStatus(yesStatus,'Choose a plan first.','bad');
@@ -922,8 +988,8 @@
     toast('Achievement unlocked: I finally asked you out 🫣');
   });
   document.getElementById('surprise').addEventListener('click', () => {
-    const next=cards[Math.floor(Math.random()*cards.length)];
-    next.querySelector('.choose').click();
+    const choices=[...cards.map(card=>card.querySelector('.choose')),...budgetCards.map(card=>card.querySelector('.budget-choose'))];
+    choices[Math.floor(Math.random()*choices.length)].click();
     toast('RNG gods have spoken 🎲');
   });
   updateQuest();
