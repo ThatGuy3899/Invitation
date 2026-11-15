@@ -415,7 +415,7 @@
         <div class="budget-heading">
           <div class="eyebrow">LOW-KEY PLANS · FREE TO EXPLORE ✨</div>
           <h3 id="budget-title">Or maybe a <span class="rose">little adventure?</span></h3>
-          <p>If you're up for something simple, here are three easy spots we could explore together. No tickets for the main activity — just us deciding where to go.</p>
+          <p>If you're up for something simple, here are two easy spots we could explore together. No tickets for the main activity — just us deciding where to go.</p>
         </div>
         <div class="budget-grid">
           <article class="budget-card" data-budget-plan="Art Gallery Afternoon">
@@ -429,18 +429,6 @@
               <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&amp;query=National%20Art%20Gallery%20Jalan%20Temerloh%20Kuala%20Lumpur">View location ↗</a>
             </details>
             <button type="button" class="btn secondary budget-choose" aria-label="Choose Art Gallery Afternoon" aria-pressed="false">Pick this adventure</button>
-          </article>
-          <article class="budget-card" data-budget-plan="City Views & Little Discoveries">
-            <div class="budget-top"><span class="budget-emoji" aria-hidden="true">🌇</span><span class="budget-tag">Usually free</span></div>
-            <h4>City views & little discoveries</h4>
-            <p class="budget-description">Skyline photos at Tuah 1895, followed by an optional wander around LaLaport BBCC.</p>
-            <p class="budget-train">🚈 Hang Tuah LRT / Monorail</p>
-            <details class="budget-details"><summary>Our little plan <span aria-hidden="true">⌄</span></summary>
-              <ol><li>Meet around Hang Tuah station</li><li>Check out the Tuah 1895 viewing deck if it's accessible</li><li>Optional LaLaport wander or dessert</li></ol>
-              <p>The deck is generally free, but access can change for events. If it's closed or too hot, we can stay indoors at LaLaport instead.</p>
-              <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&amp;query=Tuah%201895%20Plaza%20Jalan%20Hang%20Tuah%20Kuala%20Lumpur">View location ↗</a>
-            </details>
-            <button type="button" class="btn secondary budget-choose" aria-label="Choose City Views and Little Discoveries" aria-pressed="false">Pick this adventure</button>
           </article>
           <article class="budget-card" data-budget-plan="Chinatown Photo Walk">
             <div class="budget-top"><span class="budget-emoji" aria-hidden="true">📸</span><span class="budget-tag">Free entry</span></div>
@@ -603,7 +591,6 @@
     'LaLaport BBCC': {durationMinutes:150, location:'LaLaport BBCC, 2 Jalan Hang Tuah, Kuala Lumpur, Malaysia'},
     '118 Mall & Merdeka 118': {durationMinutes:150, location:'118 Mall, Jalan Hang Jebat, Kuala Lumpur, Malaysia'},
     'Art Gallery Afternoon': {durationMinutes:120, location:'National Art Gallery, 2 Jalan Temerloh, 53200 Kuala Lumpur, Malaysia'},
-    'City Views & Little Discoveries': {durationMinutes:120, location:'Tuah 1895, 2 Jalan Hang Tuah, Bukit Bintang, Kuala Lumpur, Malaysia'},
     'Chinatown Photo Walk': {durationMinutes:120, location:'Kwai Chai Hong, Lorong Panggung, Kuala Lumpur, Malaysia'}
   };
   const pad2 = n => String(n).padStart(2,'0');
@@ -630,7 +617,6 @@
       'LaLaport BBCC': 'Coffee, food and interesting shops, with optional K-pop and collectibles browsing.',
       '118 Mall & Merdeka 118': 'Discover open shops, architecture and food at 118 Mall, with flexible plans while more stores open.',
       'Art Gallery Afternoon': 'Explore National Art Gallery together, then optional coffee or food. Free entry to the gallery.',
-      'City Views & Little Discoveries': 'Tuah 1895 skyline view if accessible, then optional LaLaport BBCC. Viewing deck usually free; check access.',
       'Chinatown Photo Walk': 'Walk around Kwai Chai Hong, take photos and optionally explore Central Market. Free to visit the murals.'
     };
     const details = (detailsByPlan[selectedPlan] || 'Coffee, food and a relaxed afternoon exploring together.') + ' Tentative until we confirm together in our chat. (Malaysia time)';
