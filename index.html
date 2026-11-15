@@ -9,14 +9,14 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="A little invitation for you" />
   <meta property="og:description" content="Coffee, a tiny adventure, and a question for you 📩" />
-  <meta property="og:url" content="https://thatguy3899.github.io/Date_Invitation/" />
-  <meta property="og:image" content="https://thatguy3899.github.io/Date_Invitation/preview.png" />
+  <meta property="og:url" content="https://thatguy3899.github.io/Invitation/" />
+  <meta property="og:image" content="https://thatguy3899.github.io/Invitation/preview.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="A little invitation for you" />
   <meta name="twitter:description" content="An afternoon adventure in KL, perhaps?" />
-  <meta name="twitter:image" content="https://thatguy3899.github.io/Date_Invitation/preview.png" />
+  <meta name="twitter:image" content="https://thatguy3899.github.io/Invitation/preview.png" />
   <title>A little question for you</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -312,7 +312,7 @@
     <section class="invitation in" id="invite" aria-label="Date invitation">
       <button class="top-illustration mail-sticker" id="mail-sticker" type="button" aria-label="Tap the envelope for a surprise" title="Psst... tap me!">📩<span class="tap-hint">tap me!</span></button>
       <div class="eyebrow"><span class="eyebrow-sparkle">✧</span> SIDE QUEST UNLOCKED · A tiny question <span class="eyebrow-sparkle">✧</span></div>
-      <p class="recipient-greeting">Hey Raelyne,</p>
+      <p class="recipient-greeting">Hey Yudit,</p>
       <h1>Would you like to go on a <span class="rose">date</span> with me?</h1>
       <p class="lede">Coffee, good food and a little exploring around KL? I made a tiny website because apparently just asking normally was too easy 🫠</p>
       <p class="personal-note">I thought it would be nice to spend some time together and get to know you better in person. No pressure though — I just wanted to ask properly :)</p>
@@ -415,7 +415,7 @@
         <div class="picked-icon" aria-hidden="true">✨</div>
         <div class="eyebrow">Objective updated · almost there!</div>
         <h2 id="picked-name">Lovely choice!</h2>
-        <p>Pick a day if you'd like. We can decide the meeting time later — especially if you're coming straight from work.</p>
+        <p>Pick a day if you'd like. We can decide the meeting time later — no rush.</p>
         <form id="yes-form" class="reply-form">
           <label for="date-choice">📅 Which day works for you?</label>
           <input type="date" id="date-choice" name="chosen_date" required aria-describedby="date-hint" />
@@ -687,12 +687,14 @@
     try {
       const payload = new FormData();
       payload.append('response', reply);
+      payload.append('invitation_for', 'Yudit');
+      payload.append('invitation_site', 'https://thatguy3899.github.io/Invitation/');
       payload.append('date_plan', plan || 'None');
       payload.append('suggested_location', reply === 'Yes' && plan === 'Your own suggestion' ? (document.getElementById('custom-place')?.value.trim() || 'To be decided') : 'Not applicable');
       payload.append('chosen_date', date || 'Not applicable');
       payload.append('chosen_time_myt', reply === 'Yes' ? formattedTime() : 'Not applicable');
       payload.append('note', extraNote || '');
-      payload.append('subject', (answerRevision ? 'UPDATED date invitation reply — ' : 'Date invitation reply — ') + reply.toUpperCase());
+      payload.append('subject', (answerRevision ? 'UPDATED Yudit invitation reply — ' : 'Yudit invitation reply — ') + reply.toUpperCase());
       payload.append('reply_update', answerRevision ? 'UPDATED ANSWER — please use this answer instead of earlier submissions' : 'Original answer');
       payload.append('reply_version', String(answerRevision + 1));
       payload.append('chosen_date_iso', reply==='Yes' && !dateFlexible.checked ? dateChoice.value : 'Not set');
