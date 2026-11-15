@@ -19,7 +19,7 @@
       rain:"If it is hot or raining, let's stay in the air-conditioned mall for food, coffee and shopping. The rooftop is completely optional."
     },
     "LaLaport BBCC":{
-      where:"LaLaport BBCC, 2 Jalan Hang Tuah, Kuala Lumpur",transit:"Hang Tuah LRT/Monorail · sheltered walkway to mall",details:"Food, books and optional K-pop finds",search:"LaLaport BBCC Kuala Lumpur",
+      where:"LaLaport BBCC, 2 Jalan Hang Tuah, Kuala Lumpur",transit:"Hang Tuah LRT/Monorail · sheltered walkway to mall",details:"Anime and manga shops at ACG Base, K-pop albums and collectibles at Pop Play Planet, plus optional food",search:"LaLaport BBCC Kuala Lumpur",
       meet:"Inside LaLaport near the Hang Tuah station-linked transportation hub at LG1, East Atrium. We can confirm an easy landmark in chat.",
       rain:"We can keep the whole date indoors with food, BookXcess and whichever pop-culture shops are open."
     },
